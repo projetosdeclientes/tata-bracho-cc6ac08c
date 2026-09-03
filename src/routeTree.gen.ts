@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ComunidadeRouteImport } from './routes/comunidade'
+import { Route as IdeiasEProjetosRouteImport } from './routes/ideias-e-projetos'
 import { Route as SobreMimRouteImport } from './routes/sobre-mim'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const ComunidadeRoute = ComunidadeRouteImport.update({
   path: '/comunidade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IdeiasEProjetosRoute = IdeiasEProjetosRouteImport.update({
+  id: '/ideias-e-projetos',
+  path: '/ideias-e-projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreMimRoute = SobreMimRouteImport.update({
   id: '/sobre-mim',
   path: '/sobre-mim',
@@ -32,30 +38,34 @@ const SobreMimRoute = SobreMimRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/comunidade': typeof ComunidadeRoute
+  '/ideias-e-projetos': typeof IdeiasEProjetosRoute
   '/sobre-mim': typeof SobreMimRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/comunidade': typeof ComunidadeRoute
+  '/ideias-e-projetos': typeof IdeiasEProjetosRoute
   '/sobre-mim': typeof SobreMimRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/comunidade': typeof ComunidadeRoute
+  '/ideias-e-projetos': typeof IdeiasEProjetosRoute
   '/sobre-mim': typeof SobreMimRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/comunidade' | '/sobre-mim'
+  fullPaths: '/' | '/comunidade' | '/ideias-e-projetos' | '/sobre-mim'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/comunidade' | '/sobre-mim'
-  id: '__root__' | '/' | '/comunidade' | '/sobre-mim'
+  to: '/' | '/comunidade' | '/ideias-e-projetos' | '/sobre-mim'
+  id: '__root__' | '/' | '/comunidade' | '/ideias-e-projetos' | '/sobre-mim'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComunidadeRoute: typeof ComunidadeRoute
+  IdeiasEProjetosRoute: typeof IdeiasEProjetosRoute
   SobreMimRoute: typeof SobreMimRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComunidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ideias-e-projetos': {
+      id: '/ideias-e-projetos'
+      path: '/ideias-e-projetos'
+      fullPath: '/ideias-e-projetos'
+      preLoaderRoute: typeof IdeiasEProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre-mim': {
       id: '/sobre-mim'
       path: '/sobre-mim'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComunidadeRoute: ComunidadeRoute,
+  IdeiasEProjetosRoute: IdeiasEProjetosRoute,
   SobreMimRoute: SobreMimRoute,
 }
 export const routeTree = rootRouteImport
