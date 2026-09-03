@@ -1,24 +1,186 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { candidatura, valores } from "@/data/candidatura";
+import { projetos } from "@/data/projetos";
+import { AuroraLayer, WaveDivider } from "@/components/graphics";
+import { Reveal } from "@/components/reveal";
+import foto from "@/assets/tata-bracho.png.asset.json";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Tatá Bracho 7720 | Deputada Federal por Minas Gerais" },
+      {
+        name: "description",
+        content:
+          "O Brasil precisa de verdade, não de promessas vazias. Conheça a candidatura de Tatá Bracho, 7720, a Deputada Federal por Minas Gerais.",
+      },
+      { property: "og:title", content: "Tatá Bracho 7720 | Deputada Federal por Minas Gerais" },
+      {
+        property: "og:description",
+        content:
+          "O Brasil precisa de verdade, não de promessas vazias. Conheça a candidatura de Tatá Bracho, 7720.",
+      },
+      { name: "twitter:title", content: "Tatá Bracho 7720 | Deputada Federal" },
+      {
+        name: "twitter:description",
+        content: "O Brasil precisa de verdade, não de promessas vazias.",
+      },
+    ],
+  }),
+  component: Inicio,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const destaques = projetos.filter((p) => ["01", "07", "16"].includes(p.numero));
+
+function Inicio() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <section className="surface-deep relative isolate min-h-[100svh] overflow-hidden pt-24 sm:pt-28">
+        <AuroraLayer className="text-electric" />
+        <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
+
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-5 pb-16 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-4 lg:pb-0">
+          <div className="animate-reveal pt-6 lg:pt-16 lg:pb-28">
+            <p className="eyebrow">
+              Candidata a {candidatura.cargo} | {candidatura.estado}
+            </p>
+            <h1 className="display-xl mt-6">
+              O BRASIL PRECISA DE <span className="text-gradient">VERDADE,</span>
+              <br />
+              NÃO DE PROMESSAS VAZIAS.
+            </h1>
+            <p className="text-frost/70 mt-8 max-w-lg text-base leading-relaxed sm:text-lg">
+              Eu venci a minha maior batalha pessoal com muita luta. Agora, a nossa luta é para garantir que você também
+              vença a sua.
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <Link
+                to="/ideias-e-projetos"
+                className="bg-vivid text-frost hover:bg-electric rounded-sm px-7 py-4 text-sm font-bold tracking-wide transition-colors"
+              >
+                Conheça as propostas
+              </Link>
+              <Link
+                to="/sobre-mim"
+                className="border-border text-frost hover:border-electric rounded-sm border px-7 py-4 text-sm font-bold tracking-wide transition-colors"
+              >
+                A minha história
+              </Link>
+            </div>
+
+            <div className="mt-14 flex items-center gap-6 border-t border-border pt-8 lg:mt-20">
+              <div>
+                <p className="eyebrow">Deputada Federal</p>
+                <p className="numeral text-gradient mt-1 text-6xl leading-none sm:text-7xl">{candidatura.numero}</p>
+              </div>
+              <div className="bg-border h-16 w-px" />
+              <p className="text-frost/60 max-w-[14rem] text-xs leading-relaxed font-medium">
+                {candidatura.partido}
+                <br />
+                {candidatura.federacao}
+              </p>
+            </div>
+          </div>
+
+          <div className="relative flex justify-center self-end lg:justify-end">
+            <div
+              aria-hidden="true"
+              className="surface-vivid absolute bottom-0 left-1/2 h-[78%] w-[86%] -translate-x-1/2 rounded-t-[999px] opacity-35 blur-[2px] lg:w-[78%]"
+            />
+            <img
+              src={foto.url}
+              alt="Tatá Bracho, candidata a Deputada Federal por Minas Gerais, número 7720"
+              width={860}
+              height={1100}
+              fetchPriority="high"
+              className="relative w-full max-w-[26rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] lg:max-w-[32rem]"
+            />
+          </div>
+        </div>
+
+        <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
+      </section>
+
+      <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <Reveal>
+            <p className="eyebrow">Por que eu estou aqui</p>
+            <h2 className="display-lg mt-5 max-w-3xl">
+              Eu sei o que é carregar um peso insuportável <span className="text-electric">e não desistir.</span>
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+            {valores.map((valor, i) => (
+              <Reveal key={valor.titulo} delay={i * 70} className="border-t border-border pt-6">
+                <p className="numeral text-electric/40 text-2xl">{String(i + 1).padStart(2, "0")}</p>
+                <h3 className="mt-3 text-lg font-extrabold tracking-tight">{valor.titulo}</h3>
+                <p className="text-frost/65 mt-3 text-sm leading-relaxed">{valor.texto}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="surface-deep relative overflow-hidden py-20 sm:py-28">
+        <AuroraLayer className="text-electric opacity-60" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+          <Reveal className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow">Ideias & Projetos</p>
+              <h2 className="display-lg mt-5 max-w-2xl">Dezesseis propostas, uma mesma lógica: mudar pela raiz.</h2>
+            </div>
+            <Link
+              to="/ideias-e-projetos"
+              className="text-electric hover:text-frost text-sm font-bold tracking-wide transition-colors"
+            >
+              Ver todas as propostas →
+            </Link>
+          </Reveal>
+
+          <ul className="mt-14 space-y-px">
+            {destaques.map((projeto, i) => (
+              <Reveal as="li" key={projeto.slug} delay={i * 90}>
+                <Link
+                  to="/ideias-e-projetos"
+                  hash={projeto.slug}
+                  className="group hover:bg-royal/25 grid gap-4 border-t border-border py-8 transition-colors sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-8"
+                >
+                  <span className="numeral text-electric/40 group-hover:text-electric text-4xl transition-colors sm:text-5xl">
+                    {projeto.numero}
+                  </span>
+                  <span>
+                    <span className="block text-xl font-extrabold tracking-tight sm:text-2xl">{projeto.titulo}</span>
+                    <span className="text-frost/60 mt-2 block max-w-2xl text-sm leading-relaxed">{projeto.frase}</span>
+                  </span>
+                  <span className="text-electric hidden text-sm font-bold sm:block">→</span>
+                </Link>
+              </Reveal>
+            ))}
+          </ul>
+          <div className="rule-line mt-px" />
+        </div>
+      </section>
+
+      <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
+        <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
+          <Reveal>
+            <p className="eyebrow">Comunidade</p>
+            <h2 className="display-lg mt-5">Quem rala precisa ter vez e voz.</h2>
+            <p className="text-frost/70 mx-auto mt-6 max-w-xl text-base leading-relaxed">
+              A comunidade é o espaço de conversa direta com quem acredita nessa mudança. Participe e acompanhe de
+              perto.
+            </p>
+            <Link
+              to="/comunidade"
+              className="bg-vivid text-frost hover:bg-electric mt-9 inline-flex rounded-sm px-8 py-4 text-sm font-bold tracking-wide transition-colors"
+            >
+              Entrar na comunidade
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }
