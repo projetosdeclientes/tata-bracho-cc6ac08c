@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComunidadeRouteImport } from './routes/comunidade'
+import { Route as SobreMimRouteImport } from './routes/sobre-mim'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComunidadeRoute = ComunidadeRouteImport.update({
+  id: '/comunidade',
+  path: '/comunidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreMimRoute = SobreMimRouteImport.update({
+  id: '/sobre-mim',
+  path: '/sobre-mim',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/comunidade': typeof ComunidadeRoute
+  '/sobre-mim': typeof SobreMimRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/comunidade': typeof ComunidadeRoute
+  '/sobre-mim': typeof SobreMimRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/comunidade': typeof ComunidadeRoute
+  '/sobre-mim': typeof SobreMimRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/comunidade' | '/sobre-mim'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/comunidade' | '/sobre-mim'
+  id: '__root__' | '/' | '/comunidade' | '/sobre-mim'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComunidadeRoute: typeof ComunidadeRoute
+  SobreMimRoute: typeof SobreMimRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/comunidade': {
+      id: '/comunidade'
+      path: '/comunidade'
+      fullPath: '/comunidade'
+      preLoaderRoute: typeof ComunidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre-mim': {
+      id: '/sobre-mim'
+      path: '/sobre-mim'
+      fullPath: '/sobre-mim'
+      preLoaderRoute: typeof SobreMimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComunidadeRoute: ComunidadeRoute,
+  SobreMimRoute: SobreMimRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
