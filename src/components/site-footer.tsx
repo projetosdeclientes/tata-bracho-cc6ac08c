@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { candidatura, links } from "@/data/candidatura";
 import { WaveDivider } from "@/components/graphics";
+import brasaoMinas from "@/assets/brasao-minas-gerais.png.asset.json";
 
 const rotas = [
   { to: "/", label: "Início" },
@@ -50,9 +51,25 @@ export function SiteFooter() {
                   Solidariedade
                 </a>
               </li>
-              <li className="text-frost/55 leading-relaxed">{candidatura.nomeCompleto}</li>
+              <li className="text-frost/55 leading-relaxed">{candidatura.nomeUrna}</li>
               <li className="text-frost/55 leading-relaxed">Candidatura em {candidatura.estado}</li>
             </ul>
+
+            <div className="mt-8 flex items-center gap-4 border-t border-border pt-6">
+              <img
+                src={brasaoMinas.url}
+                alt="Brasão do Estado de Minas Gerais"
+                width={112}
+                height={108}
+                loading="lazy"
+                className="h-14 w-auto opacity-90"
+              />
+              <p className="text-frost/50 text-[0.7rem] leading-relaxed font-semibold tracking-wide uppercase">
+                Minas Gerais
+                <br />
+                Libertas quæ sera tamen
+              </p>
+            </div>
           </div>
         </div>
 
