@@ -74,7 +74,7 @@ function SobreMim() {
 
           <div className="mt-12 grid gap-x-16 gap-y-0 lg:grid-cols-2">
               {historia.map((paragrafo, i) => (
-                <Reveal key={i} delay={i * 60} className="relative pb-10">
+                <Reveal key={i} delay={i * 60} className={i === 0 ? "relative pb-10 lg:col-span-2" : "relative pb-10"}>
                   {i === 0 ? (
                     <p className="text-xl leading-relaxed font-semibold sm:text-2xl sm:leading-relaxed">{paragrafo}</p>
                   ) : (
@@ -83,7 +83,7 @@ function SobreMim() {
                 </Reveal>
               ))}
 
-              <Reveal className="border-l-2 border-electric pl-6">
+              <Reveal className="border-l-2 border-electric pl-6 lg:col-span-2">
                 <p className="text-lg leading-relaxed font-bold sm:text-xl">
                   O Brasil só vai para frente quando quem rala tiver vez e voz.
                 </p>
@@ -91,7 +91,6 @@ function SobreMim() {
                   {candidatura.nomeUrna} | {candidatura.numero}
                 </p>
               </Reveal>
-            </div>
           </div>
         </div>
       </section>
