@@ -137,11 +137,14 @@ function Inicio() {
         <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
       </section>
 
-      <section className="surface-vivid relative overflow-hidden border-y border-border py-5 sm:py-7">
+      <section
+        className="surface-vivid relative overflow-hidden border-y border-border py-10 sm:py-14"
+        style={{ "--fade-color": "#012EA0" } as React.CSSProperties}
+      >
         <VelocityMarquee
           itens={faixaCampanha}
           velocidade={80}
-          itemClassName="numeral text-frost text-3xl sm:text-5xl tracking-tight"
+          itemClassName="numeral text-frost text-4xl sm:text-6xl"
         />
         <p className="sr-only">Vote já. Tatá Bracho, 7720, Deputada Federal.</p>
       </section>
