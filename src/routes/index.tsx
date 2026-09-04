@@ -200,19 +200,24 @@ function Inicio() {
           </Reveal>
 
           <ul className="mt-14 space-y-px">
-            {destaques.map((projeto, i) => (
-              <Reveal as="li" key={projeto.slug} delay={i * 90}>
+            {eixosDestacados.map((eixo, i) => (
+              <Reveal as="li" key={eixo.id} delay={i * 80}>
                 <Link
                   to="/ideias-e-projetos"
-                  hash={projeto.slug}
+                  hash={eixo.id}
                   className="group hover:bg-royal/25 grid gap-4 border-t border-border py-8 transition-colors sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-8"
                 >
                   <span className="numeral text-electric/40 group-hover:text-electric text-4xl transition-colors sm:text-5xl">
-                    {projeto.numero}
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                   <span>
-                    <span className="block text-xl font-extrabold tracking-tight sm:text-2xl">{projeto.titulo}</span>
-                    <span className="text-frost/60 mt-2 block max-w-2xl text-sm leading-relaxed">{projeto.frase}</span>
+                    <span className="block text-xl font-extrabold tracking-tight sm:text-2xl">{eixo.nome}</span>
+                    <span className="text-frost/60 mt-2 block max-w-2xl text-sm leading-relaxed">
+                      {eixo.descricao}
+                    </span>
+                    <span className="text-frost/45 mt-2 block text-xs font-semibold tracking-wide uppercase">
+                      Propostas {eixo.primeira} a {eixo.ultima}
+                    </span>
                   </span>
                   <span className="text-electric hidden text-sm font-bold sm:block">→</span>
                 </Link>
@@ -220,6 +225,7 @@ function Inicio() {
             ))}
           </ul>
           <div className="rule-line mt-px" />
+
         </div>
       </section>
 
