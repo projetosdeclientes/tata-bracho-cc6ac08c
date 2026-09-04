@@ -116,33 +116,52 @@ function Inicio() {
             </div>
           </div>
 
-          <div className="relative order-1 flex justify-center self-end lg:order-2 lg:justify-end">
+          <div className="relative order-1 flex justify-center self-end lg:order-2 lg:sticky lg:top-24 lg:justify-end lg:self-start lg:pt-6">
             <div
               aria-hidden="true"
               className="absolute bottom-[6%] left-1/2 h-[70%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_65%,transparent),transparent_70%)] blur-2xl"
             />
-            <img
-              src={foto.url}
-              alt="Tatá Bracho, candidata a Deputada Federal por Minas Gerais, número 7720"
-              width={860}
-              height={1100}
-              fetchPriority="high"
-              className="relative w-full max-w-[19rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] sm:max-w-[24rem] lg:max-w-[30rem]"
-            />
+            <div ref={fotoParallax.ref} style={fotoParallax.style} className="relative flex w-full justify-center lg:justify-end">
+              <img
+                src={foto.url}
+                alt="Tatá Bracho, candidata a Deputada Federal por Minas Gerais, número 7720"
+                width={860}
+                height={1100}
+                fetchPriority="high"
+                className="relative w-full max-w-[19rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] sm:max-w-[24rem] lg:max-w-[30rem]"
+              />
+            </div>
           </div>
         </div>
 
         <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
       </section>
 
+      <section className="surface-vivid relative overflow-hidden border-y border-border py-5 sm:py-7">
+        <VelocityMarquee
+          itens={faixaCampanha}
+          velocidade={80}
+          itemClassName="numeral text-frost text-3xl sm:text-5xl tracking-tight"
+        />
+        <p className="sr-only">Vote já. Tatá Bracho, 7720, Deputada Federal.</p>
+      </section>
+
       <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal>
-            <p className="eyebrow">Por que eu estou aqui</p>
-            <h2 className="display-lg mt-5 max-w-3xl">
-              Eu sei o que é carregar um peso insuportável <span className="text-electric">e não desistir.</span>
-            </h2>
-          </Reveal>
+        <div
+          ref={valoresFundo.ref}
+          style={valoresFundo.style}
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_22%,transparent),transparent_70%)] blur-3xl"
+        />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+          <div ref={valoresParallax.ref} style={valoresParallax.style}>
+            <Reveal>
+              <p className="eyebrow">Por que eu estou aqui</p>
+              <h2 className="display-lg mt-5 max-w-3xl">
+                Eu sei o que é carregar um peso insuportável <span className="text-electric">e não desistir.</span>
+              </h2>
+            </Reveal>
+          </div>
 
           <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
             {valores.map((valor, i) => (
@@ -155,6 +174,7 @@ function Inicio() {
           </div>
         </div>
       </section>
+
 
       <section className="surface-deep relative overflow-hidden py-20 sm:py-28">
         <AuroraLayer className="text-electric opacity-60" />
