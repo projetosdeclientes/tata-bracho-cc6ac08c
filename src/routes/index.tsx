@@ -40,9 +40,9 @@ const destaques = projetosOrdenados.filter((p) =>
 const faixaCampanha = ["VOTE JÁ", "7720", "TATÁ BRACHO", "DEPUTADA FEDERAL", "MUDAR PELA RAIZ"];
 
 function Inicio() {
-  const fotoParallax = useParallax<HTMLDivElement>(42);
-  const valoresParallax = useParallax<HTMLDivElement>(-56);
-  const valoresFundo = useParallax<HTMLDivElement>(90);
+  const valoresParallax = useParallax<HTMLDivElement>(-150);
+  const valoresFundo = useParallax<HTMLDivElement>(260);
+  const valoresCards = useParallax<HTMLDivElement>(70);
 
   return (
     <>
