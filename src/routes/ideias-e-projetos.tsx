@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { conceitosCentrais } from "@/data/candidatura";
-import { eixos, notaConformidade, projetos } from "@/data/projetos";
+import { eixos, notaConformidade, projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
 import { Reveal } from "@/components/reveal";
 import { ProjetoBloco } from "@/components/projeto-bloco";
@@ -72,7 +72,7 @@ function IdeiasEProjetos() {
       </section>
 
       {eixos.map((eixo, index) => {
-        const doEixo = projetos.filter((p) => p.eixo === eixo.id);
+        const doEixo = projetosOrdenados.filter((p) => p.eixo === eixo.id);
         const escuro = index % 2 === 0;
         return (
           <section
