@@ -37,7 +37,7 @@ const destaques = projetosOrdenados.filter((p) =>
   ["fim-da-ilusao-do-sistema", "cnpj-para-todos", "academia-popular-e-vitalidade"].includes(p.slug),
 );
 
-const faixaCampanha = ["VOTE JÁ", "7720", "TATÁ BRACHO", "DEPUTADA FEDERAL", "MUDAR PELA RAIZ"];
+const faixaCampanha = ["VOTE JÁ", "TATÁ BRACHO 7720"];
 
 function Inicio() {
   // Todos no mesmo sentido para evitar que blocos se cruzem/sobreponham.
@@ -47,12 +47,12 @@ function Inicio() {
 
   return (
     <>
-      <section className="surface-deep relative isolate overflow-x-clip pt-24 sm:pt-28">
+      <section className="surface-deep relative z-0 overflow-x-clip pt-24 sm:pt-28 lg:sticky lg:bottom-0">
         <AuroraLayer className="text-electric" />
         <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
         <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:pb-0">
-          <div className="order-2 lg:order-1 lg:min-h-[125vh] lg:pt-14 lg:pb-40">
+          <div className="order-2 lg:order-1 lg:min-h-[108vh] lg:pt-14 lg:pb-12">
 
             <p className="eyebrow line-mask">
               <span className="line-rise">
@@ -140,7 +140,7 @@ function Inicio() {
       </section>
 
 
-      <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
+      <section className="bg-navy relative z-10 overflow-hidden py-20 shadow-[0_-30px_60px_-20px_rgba(1,21,85,0.9)] sm:py-28">
         <div
           ref={valoresFundo.ref}
           style={valoresFundo.style}
@@ -214,16 +214,25 @@ function Inicio() {
         </div>
       </section>
 
-      <section
-        className="bg-royal/30 relative overflow-hidden border-y border-border py-3"
-        style={{ "--fade-color": "#011555" } as React.CSSProperties}
-      >
-        <VelocityMarquee
-          itens={faixaCampanha}
-          velocidade={70}
-          itemClassName="numeral text-frost/85 text-base sm:text-lg tracking-[0.2em]"
+      <section className="relative z-10 border-y border-border bg-[#009c3b]">
+        {/* Losango amarelo da bandeira, alongado na largura da faixa. */}
+        <div
+          aria-hidden="true"
+          className="relative h-14 w-full bg-[#ffdf00] sm:h-16"
+          style={{ clipPath: "polygon(3% 50%, 50% 8%, 97% 50%, 50% 92%)" }}
         />
-        <p className="sr-only">Vote já. Tatá Bracho, 7720, Deputada Federal.</p>
+        {/* Círculo azul da bandeira, esticado, com a frase no lugar de "Ordem e Progresso". */}
+        <div
+          className="absolute inset-x-[14%] top-1/2 flex h-[54%] -translate-y-1/2 items-center overflow-hidden rounded-full bg-[#002776] sm:inset-x-[26%]"
+          style={{ "--fade-color": "#002776" } as React.CSSProperties}
+        >
+          <VelocityMarquee
+            itens={faixaCampanha}
+            velocidade={70}
+            itemClassName="numeral text-white text-xs sm:text-sm tracking-[0.22em]"
+          />
+        </div>
+        <p className="sr-only">Vote já. Tatá Bracho 7720, Deputada Federal.</p>
       </section>
 
 
