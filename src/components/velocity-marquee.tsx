@@ -86,7 +86,7 @@ export function VelocityMarquee({ itens, velocidade = 60, className, itemClassNa
               )}
             >
               <span>{item}</span>
-              <span className="text-electric/50 text-[0.5em] leading-none">◆</span>
+              <span className="text-[0.5em] leading-none opacity-50">◆</span>
             </span>
           ))}
         </div>
