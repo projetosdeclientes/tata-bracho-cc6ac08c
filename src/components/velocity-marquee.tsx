@@ -54,11 +54,9 @@ export function VelocityMarquee({ itens, velocidade = 60, className, itemClassNa
     };
 
     frame = window.requestAnimationFrame(passo);
-    window.addEventListener("scroll", aoRolar, { passive: true });
 
     return () => {
       window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", aoRolar);
     };
   }, [velocidade]);
 
