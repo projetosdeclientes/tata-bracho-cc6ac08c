@@ -209,6 +209,20 @@ function Inicio() {
         </div>
       </section>
 
+      <section
+        className="bg-royal/30 relative overflow-hidden border-y border-border py-3"
+        style={{ "--fade-color": "#011555" } as React.CSSProperties}
+      >
+        <VelocityMarquee
+          itens={faixaCampanha}
+          velocidade={70}
+          itemClassName="numeral text-frost/85 text-base sm:text-lg tracking-[0.2em]"
+        />
+        <p className="sr-only">Vote já. Tatá Bracho, 7720, Deputada Federal.</p>
+      </section>
+
+
+
       <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
           <Reveal>
