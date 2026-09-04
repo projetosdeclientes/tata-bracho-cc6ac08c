@@ -214,26 +214,18 @@ function Inicio() {
         </div>
       </section>
 
-      <section className="relative z-10 border-y border-border bg-[#009c3b]">
-        {/* Losango amarelo da bandeira, alongado na largura da faixa. */}
-        <div
-          aria-hidden="true"
-          className="relative h-14 w-full bg-[#ffdf00] sm:h-16"
-          style={{ clipPath: "polygon(3% 50%, 50% 8%, 97% 50%, 50% 92%)" }}
+      <section
+        className="bg-deep relative z-10 overflow-hidden border-y border-border py-4"
+        style={{ "--fade-color": "var(--color-deep, #011555)" } as React.CSSProperties}
+      >
+        <VelocityMarquee
+          itens={faixaCampanha}
+          velocidade={70}
+          itemClassName="numeral text-frost/80 text-xs sm:text-sm tracking-[0.28em]"
         />
-        {/* Círculo azul da bandeira, esticado, com a frase no lugar de "Ordem e Progresso". */}
-        <div
-          className="absolute inset-x-[14%] top-1/2 flex h-[54%] -translate-y-1/2 items-center overflow-hidden rounded-full bg-[#002776] sm:inset-x-[26%]"
-          style={{ "--fade-color": "#002776" } as React.CSSProperties}
-        >
-          <VelocityMarquee
-            itens={faixaCampanha}
-            velocidade={70}
-            itemClassName="numeral text-white text-xs sm:text-sm tracking-[0.22em]"
-          />
-        </div>
         <p className="sr-only">Vote já. Tatá Bracho 7720, Deputada Federal.</p>
       </section>
+
 
 
 
