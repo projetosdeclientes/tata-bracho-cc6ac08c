@@ -116,7 +116,7 @@ function Inicio() {
             </div>
           </div>
 
-          <div className="relative order-1 flex justify-center self-end lg:order-2 lg:sticky lg:top-24 lg:justify-end lg:self-start lg:pt-6">
+          <div className="relative order-1 flex justify-center lg:order-2 lg:sticky lg:top-24 lg:justify-end lg:self-start lg:pt-2">
             <div
               aria-hidden="true"
               className="absolute bottom-[6%] left-1/2 h-[70%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_65%,transparent),transparent_70%)] blur-2xl"
@@ -128,7 +128,7 @@ function Inicio() {
                 width={860}
                 height={1100}
                 fetchPriority="high"
-                className="relative w-full max-w-[19rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] sm:max-w-[24rem] lg:max-w-[30rem]"
+                className="relative w-full max-w-[19rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] sm:max-w-[24rem] lg:max-w-[27rem]"
               />
             </div>
           </div>
@@ -137,17 +137,6 @@ function Inicio() {
         <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
       </section>
 
-      <section
-        className="surface-vivid relative overflow-hidden border-y border-border py-10 sm:py-14"
-        style={{ "--fade-color": "#012EA0" } as React.CSSProperties}
-      >
-        <VelocityMarquee
-          itens={faixaCampanha}
-          velocidade={80}
-          itemClassName="numeral text-frost text-4xl sm:text-6xl"
-        />
-        <p className="sr-only">Vote já. Tatá Bracho, 7720, Deputada Federal.</p>
-      </section>
 
       <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
         <div
