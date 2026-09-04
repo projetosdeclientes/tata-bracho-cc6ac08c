@@ -35,26 +35,28 @@ const destaques = projetos.filter((p) => ["01", "07", "16"].includes(p.numero));
 function Inicio() {
   return (
     <>
-      <section className="surface-deep relative isolate min-h-[100svh] overflow-hidden pt-24 sm:pt-28">
+      <section className="surface-deep relative isolate overflow-hidden pt-24 sm:pt-28 lg:min-h-[100svh]">
         <AuroraLayer className="text-electric" />
         <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-8 px-5 pb-16 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-4 lg:pb-0">
-          <div className="animate-reveal pt-6 lg:pt-16 lg:pb-28">
+        <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:pb-0">
+          <div className="animate-reveal order-2 lg:order-1 lg:pt-14 lg:pb-24">
             <p className="eyebrow">
               Candidata a {candidatura.cargo} | {candidatura.estado}
             </p>
-            <h1 className="display-xl mt-6">
-              O BRASIL PRECISA DE <span className="text-gradient">VERDADE,</span>
+            <h1 className="display-xl mt-5">
+              O BRASIL PRECISA
               <br />
-              NÃO DE PROMESSAS VAZIAS.
+              DE <span className="text-gradient">VERDADE,</span> NÃO DE
+              <br />
+              PROMESSAS VAZIAS.
             </h1>
-            <p className="text-frost/70 mt-8 max-w-lg text-base leading-relaxed sm:text-lg">
+            <p className="text-frost/70 mt-7 max-w-lg text-base leading-relaxed sm:text-lg">
               Eu venci a minha maior batalha pessoal com muita luta. Agora, a nossa luta é para garantir que você também
               vença a sua.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link
                 to="/ideias-e-projetos"
                 className="bg-vivid text-frost hover:bg-electric rounded-sm px-7 py-4 text-sm font-bold tracking-wide transition-colors"
@@ -69,12 +71,12 @@ function Inicio() {
               </Link>
             </div>
 
-            <div className="mt-14 flex items-center gap-6 border-t border-border pt-8 lg:mt-20">
+            <div className="mt-12 flex items-center gap-6 border-t border-border pt-7 lg:mt-16">
               <div>
                 <p className="eyebrow">Deputada Federal</p>
-                <p className="numeral text-gradient mt-1 text-6xl leading-none sm:text-7xl">{candidatura.numero}</p>
+                <p className="numeral text-gradient mt-1 text-5xl leading-none sm:text-6xl">{candidatura.numero}</p>
               </div>
-              <div className="bg-border h-16 w-px" />
+              <div className="bg-border h-14 w-px" />
               <p className="text-frost/60 max-w-[14rem] text-xs leading-relaxed font-medium">
                 {candidatura.partido}
                 <br />
@@ -83,10 +85,10 @@ function Inicio() {
             </div>
           </div>
 
-          <div className="relative flex justify-center self-end lg:justify-end">
+          <div className="relative order-1 flex justify-center self-end lg:order-2 lg:justify-end">
             <div
               aria-hidden="true"
-              className="surface-vivid absolute bottom-0 left-1/2 h-[78%] w-[86%] -translate-x-1/2 rounded-t-[999px] opacity-35 blur-[2px] lg:w-[78%]"
+              className="absolute bottom-[6%] left-1/2 h-[70%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_65%,transparent),transparent_70%)] blur-2xl"
             />
             <img
               src={foto.url}
@@ -94,7 +96,7 @@ function Inicio() {
               width={860}
               height={1100}
               fetchPriority="high"
-              className="relative w-full max-w-[26rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] lg:max-w-[32rem]"
+              className="relative w-full max-w-[19rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] sm:max-w-[24rem] lg:max-w-[30rem]"
             />
           </div>
         </div>
