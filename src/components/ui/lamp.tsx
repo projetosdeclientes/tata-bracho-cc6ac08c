@@ -69,7 +69,7 @@ export const LampContainer = ({ children, className }: { children: React.ReactNo
         <div className="bg-navy-deep absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem]" />
       </div>
 
-      <div className="relative z-50 flex w-full -translate-y-56 flex-col items-center px-5 sm:-translate-y-64">
+      <div className="relative z-50 flex w-full -translate-y-72 flex-col items-center px-5 sm:-translate-y-80">
         {children}
       </div>
     </div>
