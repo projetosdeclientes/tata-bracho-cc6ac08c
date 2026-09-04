@@ -115,7 +115,7 @@ function Inicio() {
             <div className="mt-12 flex items-center gap-6 border-t border-border pt-7 lg:mt-16">
               <div>
                 <p className="eyebrow">Deputada Federal</p>
-                <p className="numeral text-gradient mt-1 text-5xl leading-none sm:text-6xl">{candidatura.numero}</p>
+                <p className="numero-oficial mt-1 text-5xl leading-none sm:text-6xl">{candidatura.numero}</p>
               </div>
               <div className="bg-border h-14 w-px" />
               <p className="text-frost/60 max-w-[14rem] text-xs leading-relaxed font-medium">
@@ -157,7 +157,7 @@ function Inicio() {
         <div className="pointer-events-none fixed top-[-10vh] left-0 h-[120vh] w-full" aria-hidden="true">
           <div
             className="bg-navy relative h-full w-full will-change-transform"
-            style={{ transform: `translate3d(0, ${(valoresFundo.progress * 10).toFixed(2)}%, 0)` }}
+            style={{ transform: `translate3d(0, ${(valoresFundo.progress * 22).toFixed(2)}%, 0)` }}
           >
             <div className="absolute -top-24 right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_28%,transparent),transparent_70%)] blur-3xl" />
             <div className="absolute bottom-[-8rem] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_26%,transparent),transparent_70%)] blur-3xl" />
