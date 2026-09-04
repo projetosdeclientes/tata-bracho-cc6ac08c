@@ -64,16 +64,15 @@ function SobreMim() {
             </div>
           </Reveal>
 
-          <div className="mt-14 grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <Reveal>
-              <p className="eyebrow">Em primeira pessoa</p>
-              <p className="text-frost/60 mt-5 text-sm leading-relaxed">
-                Da luta contra a balança à decisão de disputar um mandato: a trajetória que sustenta cada proposta
-                desta candidatura.
-              </p>
-            </Reveal>
+          <Reveal className="mt-14 max-w-3xl">
+            <p className="eyebrow">Em primeira pessoa</p>
+            <p className="text-frost/70 mt-4 text-lg leading-relaxed sm:text-xl">
+              Da luta contra a balança à decisão de disputar um mandato: a trajetória que sustenta cada proposta desta
+              candidatura.
+            </p>
+          </Reveal>
 
-            <div className="max-w-3xl">
+          <div className="mt-12 grid gap-x-16 gap-y-0 lg:grid-cols-2">
               {historia.map((paragrafo, i) => (
                 <Reveal key={i} delay={i * 60} className="relative pb-10">
                   {i === 0 ? (
