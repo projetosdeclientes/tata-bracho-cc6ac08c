@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { candidatura, valores } from "@/data/candidatura";
-import { projetos } from "@/data/projetos";
+import { projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
 import { Reveal } from "@/components/reveal";
+import { VelocityMarquee } from "@/components/velocity-marquee";
+import { useParallax } from "@/hooks/use-parallax";
 import foto from "@/assets/tata-bracho.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
