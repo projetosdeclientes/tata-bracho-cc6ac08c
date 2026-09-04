@@ -43,59 +43,57 @@ function SobreMim() {
       </section>
 
       <section className="bg-navy relative py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-          <div>
-            <Reveal>
-              <div className="surface-vivid/0 relative">
-                <div
-                  aria-hidden="true"
-                  className="surface-vivid absolute inset-x-6 bottom-0 top-16 rounded-t-[999px] opacity-30 blur-[2px]"
-                />
-                <img
-                  src={foto.url}
-                  alt="Retrato oficial de Tatá Bracho"
-                  width={860}
-                  height={1100}
-                  loading="lazy"
-                  className="relative w-full max-w-sm object-contain drop-shadow-[0_30px_50px_rgba(1,21,85,0.55)]"
-                />
-              </div>
-              <div className="mt-8 grid grid-cols-2 gap-6 border-t border-border pt-8">
-                <div>
-                  <p className="numeral text-gradient text-5xl leading-none">76</p>
-                  <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
-                    quilos perdidos
-                  </p>
-                </div>
-                <div>
-                  <p className="numeral text-gradient text-5xl leading-none">4</p>
-                  <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
-                    anos de disciplina
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <Reveal className="grid gap-8 border-b border-border pb-10 sm:grid-cols-3">
+            <div>
+              <p className="numeral text-gradient text-6xl leading-none">76</p>
+              <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
+                quilos perdidos
+              </p>
+            </div>
+            <div>
+              <p className="numeral text-gradient text-6xl leading-none">4</p>
+              <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
+                anos de disciplina
+              </p>
+            </div>
+            <div>
+              <p className="numeral text-gradient text-6xl leading-none">16</p>
+              <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
+                propostas apresentadas
+              </p>
+            </div>
+          </Reveal>
 
-          <div>
-            {historia.map((paragrafo, i) => (
-              <Reveal key={i} delay={i * 60} className="relative pb-10">
-                {i === 0 ? (
-                  <p className="text-xl leading-relaxed font-semibold sm:text-2xl sm:leading-relaxed">{paragrafo}</p>
-                ) : (
-                  <p className="text-frost/75 text-base leading-loose sm:text-lg">{paragrafo}</p>
-                )}
+          <div className="mt-14 grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
+            <Reveal className="lg:sticky lg:top-28 lg:self-start">
+              <p className="eyebrow">Em primeira pessoa</p>
+              <p className="text-frost/60 mt-5 text-sm leading-relaxed">
+                Da luta contra a balança à decisão de disputar um mandato: a trajetória que sustenta cada proposta
+                desta candidatura.
+              </p>
+            </Reveal>
+
+            <div className="max-w-3xl">
+              {historia.map((paragrafo, i) => (
+                <Reveal key={i} delay={i * 60} className="relative pb-10">
+                  {i === 0 ? (
+                    <p className="text-xl leading-relaxed font-semibold sm:text-2xl sm:leading-relaxed">{paragrafo}</p>
+                  ) : (
+                    <p className="text-frost/75 text-base leading-loose sm:text-lg">{paragrafo}</p>
+                  )}
+                </Reveal>
+              ))}
+
+              <Reveal className="border-l-2 border-electric pl-6">
+                <p className="text-lg leading-relaxed font-bold sm:text-xl">
+                  O Brasil só vai para frente quando quem rala tiver vez e voz.
+                </p>
+                <p className="eyebrow mt-4">
+                  {candidatura.nomeUrna} | {candidatura.numero}
+                </p>
               </Reveal>
-            ))}
-
-            <Reveal className="border-l-2 border-electric pl-6">
-              <p className="text-lg leading-relaxed font-bold sm:text-xl">
-                O Brasil só vai para frente quando quem rala tiver vez e voz.
-              </p>
-              <p className="eyebrow mt-4">
-                {candidatura.nomeUrna} | {candidatura.numero}
-              </p>
-            </Reveal>
+            </div>
           </div>
         </div>
       </section>
