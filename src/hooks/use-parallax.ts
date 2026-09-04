@@ -52,3 +52,49 @@ export function useParallax<T extends HTMLElement = HTMLDivElement>(velocidade =
     style: { transform: `translate3d(0, ${offset.toFixed(2)}px, 0)`, willChange: "transform" } as const,
   };
 }
+
+/**
+ * Progresso de rolagem de um container no estilo 21st.dev ("start end" -> "end start"):
+ * 0 quando o topo do container encosta na base da viewport, 1 quando a base
+ * do container sai pelo topo. Dirigido apenas pelo scroll real, via rAF.
+ */
+export function useScrollProgress<T extends HTMLElement = HTMLDivElement>() {
+  const ref = useRef<T | null>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    if (typeof window === "undefined") return;
+    const reduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduzido.matches) return;
+
+    let frame = 0;
+
+    const calcular = () => {
+      frame = 0;
+      const rect = node.getBoundingClientRect();
+      const alturaViewport = window.innerHeight || 1;
+      const bruto = (alturaViewport - rect.top) / (alturaViewport + rect.height);
+      setProgress(Math.max(0, Math.min(1, bruto)));
+    };
+
+    const agendar = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(calcular);
+    };
+
+    calcular();
+    window.addEventListener("scroll", agendar, { passive: true });
+    window.addEventListener("resize", agendar);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", agendar);
+      window.removeEventListener("resize", agendar);
+    };
+  }, []);
+
+  return { ref, progress };
+}
