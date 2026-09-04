@@ -40,13 +40,14 @@ const destaques = projetosOrdenados.filter((p) =>
 const faixaCampanha = ["VOTE JÁ", "7720", "TATÁ BRACHO", "DEPUTADA FEDERAL", "MUDAR PELA RAIZ"];
 
 function Inicio() {
-  const valoresParallax = useParallax<HTMLDivElement>(-150);
+  // Todos no mesmo sentido para evitar que blocos se cruzem/sobreponham.
+  const valoresParallax = useParallax<HTMLDivElement>(40);
   const valoresFundo = useParallax<HTMLDivElement>(260);
-  const valoresCards = useParallax<HTMLDivElement>(70);
+  const valoresCards = useParallax<HTMLDivElement>(90);
 
   return (
     <>
-      <section className="surface-deep relative isolate overflow-hidden pt-24 sm:pt-28">
+      <section className="surface-deep relative isolate overflow-x-clip pt-24 sm:pt-28">
         <AuroraLayer className="text-electric" />
         <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
