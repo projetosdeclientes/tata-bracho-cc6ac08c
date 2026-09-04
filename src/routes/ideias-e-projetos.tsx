@@ -38,7 +38,7 @@ function IdeiasEProjetos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-            className="display-lg mx-auto max-w-4xl text-center sm:text-[length:inherit] sm:display-xl"
+            className="display-lg mx-auto max-w-4xl text-center sm:text-6xl"
           >
             DEZESSEIS PROPOSTAS PARA <span className="text-gradient">MUDAR PELA RAIZ.</span>
           </motion.h1>
