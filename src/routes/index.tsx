@@ -35,7 +35,7 @@ const destaques = projetos.filter((p) => ["01", "07", "16"].includes(p.numero));
 function Inicio() {
   return (
     <>
-      <section className="surface-deep relative isolate overflow-hidden pt-24 sm:pt-28 lg:min-h-[100svh]">
+      <section className="surface-deep relative isolate overflow-hidden pt-24 sm:pt-28">
         <AuroraLayer className="text-electric" />
         <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
