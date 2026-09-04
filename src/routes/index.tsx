@@ -53,13 +53,13 @@ function Inicio() {
         <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:pb-0">
           <div className="order-2 lg:order-1 lg:pt-14 lg:pb-24">
             <p className="eyebrow line-mask">
-              <span className="line-rise">
+              <span className="line-rise whitespace-nowrap">
                 Candidata a {candidatura.cargo} | {candidatura.estado}
               </span>
             </p>
-            <h1 className="display-xl mt-5">
+            <h1 className="hero-title mt-5">
               <span className="line-mask">
-                <span className="line-rise" style={{ animationDelay: "120ms" }}>
+                <span className="line-rise whitespace-nowrap" style={{ animationDelay: "120ms" }}>
                   O{" "}
                   <span className="flag-word">
                     BRASIL
@@ -71,12 +71,12 @@ function Inicio() {
                 </span>
               </span>
               <span className="line-mask">
-                <span className="line-rise" style={{ animationDelay: "260ms" }}>
+                <span className="line-rise whitespace-nowrap" style={{ animationDelay: "260ms" }}>
                   DE <span className="text-gradient">VERDADE,</span> NÃO DE
                 </span>
               </span>
               <span className="line-mask">
-                <span className="line-rise" style={{ animationDelay: "400ms" }}>
+                <span className="line-rise whitespace-nowrap" style={{ animationDelay: "400ms" }}>
                   PROMESSAS VAZIAS.
                 </span>
               </span>

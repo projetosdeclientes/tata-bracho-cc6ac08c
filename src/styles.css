@@ -253,6 +253,16 @@
 @utility line-mask {
   display: block;
   overflow: hidden;
+  padding-block: 0.08em;
+  margin-block: -0.08em;
+}
+
+/* Título do hero: escala para caber em uma linha por bloco. */
+@utility hero-title {
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-size: clamp(1.65rem, 4.85vw, 3.9rem);
 }
 
 @utility line-rise {
