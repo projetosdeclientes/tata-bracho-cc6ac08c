@@ -14,7 +14,8 @@ export const candidatura = {
   fraseHero: "O Brasil precisa de verdade, não de promessas vazias.",
   tituloHistoria: "A MINHA HISTÓRIA É A LUTA DO POVO",
   identificacaoEleitoral:
-    "PROPAGANDA ELEITORAL | Taciany Pereira dos Santos | Tatá Bracho | Deputada Federal n° 7720 | Federação Renovação Solidária (Solidariedade/PRD) | CNPJ: 68.237.289/0001-09",
+    "PROPAGANDA ELEITORAL | Tatá Bracho | Deputada Federal n° 7720 | Federação Renovação Solidária (Solidariedade/PRD) | CNPJ: 68.237.289/0001-09",
+
 } as const;
 
 /** Links oficiais já fornecidos pela campanha. */

@@ -38,7 +38,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-20 sm:px-8">
         <Link to="/" onClick={() => setAberto(false)} className="group flex items-baseline gap-2.5">
           <span className="text-base font-extrabold tracking-tight sm:text-lg">Tatá Bracho</span>
-          <span className="numeral text-electric text-sm sm:text-base">{candidatura.numero}</span>
+          <span className="numero-oficial text-sm sm:text-base">{candidatura.numero}</span>
         </Link>
 
         <nav aria-label="Navegação principal" className="hidden items-center gap-9 md:flex">
