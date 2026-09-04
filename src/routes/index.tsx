@@ -49,13 +49,13 @@ const faixaCampanha = ["VOTE JÁ", "TATÁ BRACHO 7720"];
 
 function Inicio() {
   // Todos no mesmo sentido para evitar que blocos se cruzem/sobreponham.
-  const valoresParallax = useParallax<HTMLDivElement>(40);
+  const valoresParallax = useParallax<HTMLDivElement>(110);
   const valoresFundo = useScrollProgress<HTMLElement>();
-  const valoresCards = useParallax<HTMLDivElement>(90);
+  const valoresCards = useParallax<HTMLDivElement>(190);
 
   return (
     <>
-      <section className="surface-deep relative z-0 overflow-x-clip pt-24 sm:pt-28 lg:sticky lg:bottom-0">
+      <section className="surface-deep sticky bottom-0 z-0 overflow-x-clip pt-24 sm:pt-28">
         <AuroraLayer className="text-electric" />
         <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
@@ -150,14 +150,14 @@ function Inicio() {
 
       <section
         ref={valoresFundo.ref}
-        className="bg-navy relative z-10 overflow-hidden py-20 shadow-[0_-30px_60px_-20px_rgba(1,21,85,0.9)] sm:py-28"
+        className="bg-navy sticky bottom-0 z-10 overflow-hidden py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
         style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
       >
         {/* Fundo fixo, mais alto que a janela, deslocado pelo progresso real da rolagem. */}
         <div className="pointer-events-none fixed top-[-10vh] left-0 h-[120vh] w-full" aria-hidden="true">
           <div
             className="bg-navy relative h-full w-full will-change-transform"
-            style={{ transform: `translate3d(0, ${(valoresFundo.progress * 22).toFixed(2)}%, 0)` }}
+            style={{ transform: `translate3d(0, ${(valoresFundo.progress * 45).toFixed(2)}%, 0)` }}
           >
             <div className="absolute -top-24 right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_28%,transparent),transparent_70%)] blur-3xl" />
             <div className="absolute bottom-[-8rem] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_26%,transparent),transparent_70%)] blur-3xl" />
@@ -191,7 +191,7 @@ function Inicio() {
       </section>
 
 
-      <section className="surface-deep relative overflow-hidden py-20 sm:py-28">
+      <section className="surface-deep sticky bottom-0 z-20 overflow-hidden py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
         <AuroraLayer className="text-electric opacity-60" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
@@ -238,7 +238,7 @@ function Inicio() {
       </section>
 
       <section
-        className="bg-navy-deep relative z-10 overflow-hidden border-y border-border py-4"
+        className="bg-navy-deep relative z-30 overflow-hidden border-y border-border py-4"
         style={{ "--fade-color": "var(--navy-deep)" } as React.CSSProperties}
       >
         <VelocityMarquee
@@ -252,7 +252,7 @@ function Inicio() {
 
 
 
-      <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
+      <section className="bg-navy relative z-40 overflow-hidden py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
           <Reveal>
             <p className="eyebrow">Comunidade</p>
