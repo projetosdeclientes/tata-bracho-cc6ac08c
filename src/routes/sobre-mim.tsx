@@ -44,7 +44,7 @@ function SobreMim() {
 
       <section className="bg-navy relative py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-          <div className="lg:sticky lg:top-28 lg:self-start">
+          <div>
             <Reveal>
               <div className="surface-vivid/0 relative">
                 <div

@@ -18,7 +18,7 @@ export function SiteFooter() {
           <div>
             <p className="text-3xl font-black tracking-tight sm:text-4xl">Tatá Bracho</p>
             <p className="text-frost/70 mt-1 text-sm font-semibold">{candidatura.cargo}</p>
-            <p className="numeral text-electric mt-4 text-6xl leading-none sm:text-7xl">{candidatura.numero}</p>
+            <p className="numero-oficial mt-4 text-6xl leading-none sm:text-7xl">{candidatura.numero}</p>
             <p className="text-frost/55 mt-4 max-w-xs text-sm leading-relaxed">
               {candidatura.partido} | {candidatura.federacao}
             </p>
