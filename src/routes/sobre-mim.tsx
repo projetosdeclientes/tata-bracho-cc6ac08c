@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { candidatura, historia, links } from "@/data/candidatura";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
 import { Reveal } from "@/components/reveal";
-import foto from "@/assets/tata-bracho.png.asset.json";
 
 export const Route = createFileRoute("/sobre-mim")({
   head: () => ({
@@ -104,9 +103,7 @@ function SobreMim() {
             <Reveal>
               <p className="eyebrow">Registro eleitoral</p>
               <dl className="mt-6 space-y-4 text-sm">
-                {[
-                  ["Nome completo", candidatura.nomeCompleto],
-                  ["Nome na urna", candidatura.nomeUrna],
+                {[                  ["Nome na urna", candidatura.nomeUrna],
                   ["Cargo", candidatura.cargo],
                   ["Número", candidatura.numero],
                   ["Partido", candidatura.partido],
