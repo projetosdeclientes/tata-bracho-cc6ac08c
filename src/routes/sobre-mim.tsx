@@ -65,7 +65,7 @@ function SobreMim() {
           </Reveal>
 
           <div className="mt-14 grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <Reveal className="lg:sticky lg:top-28 lg:self-start">
+            <Reveal>
               <p className="eyebrow">Em primeira pessoa</p>
               <p className="text-frost/60 mt-5 text-sm leading-relaxed">
                 Da luta contra a balança à decisão de disputar um mandato: a trajetória que sustenta cada proposta

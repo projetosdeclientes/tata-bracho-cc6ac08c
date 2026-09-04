@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
+import { LampContainer } from "@/components/ui/lamp";
 import { conceitosCentrais } from "@/data/candidatura";
 import { eixos, notaConformidade, projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
@@ -29,14 +31,22 @@ export const Route = createFileRoute("/ideias-e-projetos")({
 function IdeiasEProjetos() {
   return (
     <>
-      <section className="surface-deep relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
+      <section className="surface-deep relative overflow-hidden pb-20 sm:pb-28">
+        <LampContainer className="min-h-[42rem] pt-24 sm:min-h-[46rem]">
+          <motion.h1
+            initial={{ opacity: 0.5, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+            className="display-xl mx-auto max-w-4xl text-center"
+          >
+            DEZESSEIS PROPOSTAS PARA <span className="text-gradient">MUDAR PELA RAIZ.</span>
+          </motion.h1>
+        </LampContainer>
         <AuroraLayer className="text-electric" />
         <div className="hairline-grid absolute inset-0 opacity-30" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <p className="eyebrow animate-reveal">Ideias & Projetos</p>
-          <h1 className="display-xl animate-reveal mt-6 max-w-4xl">
-            DEZESSEIS PROPOSTAS PARA <span className="text-gradient">MUDAR PELA RAIZ.</span>
-          </h1>
           <div className="animate-reveal mt-10 grid gap-8 border-t border-border pt-8 lg:grid-cols-[1.2fr_0.8fr]">
             <p className="text-frost/70 max-w-2xl text-base leading-relaxed sm:text-lg">
               Cada proposta nasce da mesma história: a de quem carregou um peso enorme, literal e figurado, e decidiu
