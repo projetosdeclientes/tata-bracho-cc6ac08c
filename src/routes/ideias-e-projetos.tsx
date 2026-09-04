@@ -32,13 +32,13 @@ function IdeiasEProjetos() {
   return (
     <>
       <section className="surface-deep relative overflow-hidden pb-20 sm:pb-28">
-        <LampContainer className="min-h-[42rem] pt-24 sm:min-h-[46rem]">
+        <LampContainer className="min-h-[34rem] pt-20 sm:min-h-[46rem] sm:pt-24">
           <motion.h1
             initial={{ opacity: 0.5, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-            className="display-xl mx-auto max-w-4xl text-center"
+            className="display-lg mx-auto max-w-4xl text-center sm:text-6xl"
           >
             DEZESSEIS PROPOSTAS PARA <span className="text-gradient">MUDAR PELA RAIZ.</span>
           </motion.h1>

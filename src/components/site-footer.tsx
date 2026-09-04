@@ -64,11 +64,6 @@ export function SiteFooter() {
                 loading="lazy"
                 className="h-14 w-auto opacity-90"
               />
-              <p className="text-frost/50 text-[0.7rem] leading-relaxed font-semibold tracking-wide uppercase">
-                Minas Gerais
-                <br />
-                Libertas quæ sera tamen
-              </p>
             </div>
           </div>
         </div>
