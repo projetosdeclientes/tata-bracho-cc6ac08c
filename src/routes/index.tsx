@@ -140,13 +140,22 @@ function Inicio() {
       </section>
 
 
-      <section className="bg-navy relative z-10 overflow-hidden py-20 shadow-[0_-30px_60px_-20px_rgba(1,21,85,0.9)] sm:py-28">
-        <div
-          ref={valoresFundo.ref}
-          style={valoresFundo.style}
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-24 right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_22%,transparent),transparent_70%)] blur-3xl"
-        />
+      <section
+        ref={valoresFundo.ref}
+        className="bg-navy relative z-10 overflow-hidden py-20 shadow-[0_-30px_60px_-20px_rgba(1,21,85,0.9)] sm:py-28"
+        style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
+      >
+        {/* Fundo fixo, mais alto que a janela, deslocado pelo progresso real da rolagem. */}
+        <div className="pointer-events-none fixed top-[-10vh] left-0 h-[120vh] w-full" aria-hidden="true">
+          <div
+            className="bg-navy relative h-full w-full will-change-transform"
+            style={{ transform: `translate3d(0, ${(valoresFundo.progress * 10).toFixed(2)}%, 0)` }}
+          >
+            <div className="absolute -top-24 right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_28%,transparent),transparent_70%)] blur-3xl" />
+            <div className="absolute bottom-[-8rem] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_26%,transparent),transparent_70%)] blur-3xl" />
+            <div className="hairline-grid absolute inset-0 opacity-30" />
+          </div>
+        </div>
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <div ref={valoresParallax.ref} style={valoresParallax.style}>
             <Reveal>
