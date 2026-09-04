@@ -50,8 +50,9 @@ function Inicio() {
         <AuroraLayer className="text-electric" />
         <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:pb-0">
-          <div className="order-2 lg:order-1 lg:pt-14 lg:pb-24">
+        <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:pb-0">
+          <div className="order-2 lg:order-1 lg:pt-14 lg:pb-32">
+
             <p className="eyebrow line-mask">
               <span className="line-rise">
                 Candidata a {candidatura.cargo} | {candidatura.estado}
