@@ -215,8 +215,8 @@ function Inicio() {
       </section>
 
       <section
-        className="bg-deep relative z-10 overflow-hidden border-y border-border py-4"
-        style={{ "--fade-color": "var(--color-deep, #011555)" } as React.CSSProperties}
+        className="bg-navy-deep relative z-10 overflow-hidden border-y border-border py-4"
+        style={{ "--fade-color": "var(--navy-deep)" } as React.CSSProperties}
       >
         <VelocityMarquee
           itens={faixaCampanha}
