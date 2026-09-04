@@ -223,7 +223,7 @@ function Inicio() {
         />
         {/* Círculo azul da bandeira, esticado, com a frase no lugar de "Ordem e Progresso". */}
         <div
-          className="absolute inset-x-[8%] top-1/2 flex h-[62%] -translate-y-1/2 items-center overflow-hidden rounded-full bg-[#002776] sm:inset-x-[14%]"
+          className="absolute inset-x-[14%] top-1/2 flex h-[54%] -translate-y-1/2 items-center overflow-hidden rounded-full bg-[#002776] sm:inset-x-[26%]"
           style={{ "--fade-color": "#002776" } as React.CSSProperties}
         >
           <VelocityMarquee
