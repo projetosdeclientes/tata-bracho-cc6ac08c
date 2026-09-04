@@ -27,23 +27,14 @@ export function VelocityMarquee({ itens, velocidade = 60, className, itemClassNa
 
     let deslocamento = 0;
     let ultimoTempo = performance.now();
-    let ultimoScroll = window.scrollY;
-    let impulso = 0;
     let frame = 0;
-
-    const aoRolar = () => {
-      const atual = window.scrollY;
-      impulso = Math.max(-40, Math.min(40, impulso + (atual - ultimoScroll) * 0.6));
-      ultimoScroll = atual;
-    };
 
     const passo = (tempo: number) => {
       const dt = Math.min(0.05, (tempo - ultimoTempo) / 1000);
       ultimoTempo = tempo;
-      impulso *= 0.92;
 
       const largura = trilho.scrollWidth / 3 || 1;
-      deslocamento -= (velocidade + impulso * 8) * dt;
+      deslocamento -= velocidade * dt;
       if (deslocamento <= -largura) deslocamento += largura;
       if (deslocamento > 0) deslocamento -= largura;
 
@@ -63,11 +54,9 @@ export function VelocityMarquee({ itens, velocidade = 60, className, itemClassNa
     };
 
     frame = window.requestAnimationFrame(passo);
-    window.addEventListener("scroll", aoRolar, { passive: true });
 
     return () => {
       window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", aoRolar);
     };
   }, [velocidade]);
 

@@ -40,9 +40,9 @@ const destaques = projetosOrdenados.filter((p) =>
 const faixaCampanha = ["VOTE JÁ", "7720", "TATÁ BRACHO", "DEPUTADA FEDERAL", "MUDAR PELA RAIZ"];
 
 function Inicio() {
-  const fotoParallax = useParallax<HTMLDivElement>(42);
-  const valoresParallax = useParallax<HTMLDivElement>(-56);
-  const valoresFundo = useParallax<HTMLDivElement>(90);
+  const valoresParallax = useParallax<HTMLDivElement>(-150);
+  const valoresFundo = useParallax<HTMLDivElement>(260);
+  const valoresCards = useParallax<HTMLDivElement>(70);
 
   return (
     <>
@@ -51,7 +51,7 @@ function Inicio() {
         <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
         <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:pb-0">
-          <div className="order-2 lg:order-1 lg:pt-14 lg:pb-32">
+          <div className="order-2 lg:order-1 lg:min-h-[125vh] lg:pt-14 lg:pb-40">
 
             <p className="eyebrow line-mask">
               <span className="line-rise">
@@ -117,12 +117,12 @@ function Inicio() {
             </div>
           </div>
 
-          <div className="relative order-1 flex justify-center lg:order-2 lg:sticky lg:top-24 lg:justify-end lg:self-start lg:pt-2">
+          <div className="relative order-1 flex justify-center lg:order-2 lg:sticky lg:top-28 lg:justify-end lg:self-start">
             <div
               aria-hidden="true"
               className="absolute bottom-[6%] left-1/2 h-[70%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_65%,transparent),transparent_70%)] blur-2xl"
             />
-            <div ref={fotoParallax.ref} style={fotoParallax.style} className="relative flex w-full justify-center lg:justify-end">
+            <div className="relative flex w-full justify-center lg:justify-end">
               <img
                 src={foto.url}
                 alt="Tatá Bracho, candidata a Deputada Federal por Minas Gerais, número 7720"
@@ -156,7 +156,11 @@ function Inicio() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            ref={valoresCards.ref}
+            style={valoresCards.style}
+            className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3"
+          >
             {valores.map((valor, i) => (
               <Reveal key={valor.titulo} delay={i * 70} className="border-t border-border pt-6">
                 <p className="numeral text-electric/40 text-2xl">{String(i + 1).padStart(2, "0")}</p>
