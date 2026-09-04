@@ -55,7 +55,7 @@ function Inicio() {
 
   return (
     <>
-      <section className="surface-deep sticky bottom-0 z-0 overflow-x-clip pt-24 sm:pt-28">
+      <section className="surface-deep relative z-0 overflow-x-clip pt-24 pb-8 sm:pt-28">
         <AuroraLayer className="text-electric" />
         <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
@@ -150,7 +150,7 @@ function Inicio() {
 
       <section
         ref={valoresFundo.ref}
-        className="bg-navy sticky bottom-0 z-10 overflow-hidden py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
+        className="bg-navy relative z-10 -mt-8 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
         style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
       >
         {/* Fundo fixo, mais alto que a janela, deslocado pelo progresso real da rolagem. */}
@@ -191,7 +191,7 @@ function Inicio() {
       </section>
 
 
-      <section className="surface-deep sticky bottom-0 z-20 overflow-hidden py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
+      <section className="surface-deep relative z-20 -mt-6 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
         <AuroraLayer className="text-electric opacity-60" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
