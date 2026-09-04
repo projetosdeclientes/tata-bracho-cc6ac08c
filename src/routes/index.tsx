@@ -42,7 +42,7 @@ const faixaCampanha = ["VOTE JÁ", "TATÁ BRACHO 7720"];
 function Inicio() {
   // Todos no mesmo sentido para evitar que blocos se cruzem/sobreponham.
   const valoresParallax = useParallax<HTMLDivElement>(40);
-  const valoresFundo = useParallax<HTMLDivElement>(260);
+  const valoresFundo = useScrollProgress<HTMLElement>();
   const valoresCards = useParallax<HTMLDivElement>(90);
 
   return (
