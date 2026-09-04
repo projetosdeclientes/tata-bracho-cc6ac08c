@@ -117,7 +117,7 @@ function Inicio() {
             </div>
           </div>
 
-          <div className="relative order-1 flex justify-center lg:order-2 lg:sticky lg:top-24 lg:justify-end lg:self-start lg:pt-2">
+          <div className="relative order-1 flex justify-center lg:order-2 lg:sticky lg:top-28 lg:justify-end lg:self-start">
             <div
               aria-hidden="true"
               className="absolute bottom-[6%] left-1/2 h-[70%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_65%,transparent),transparent_70%)] blur-2xl"
