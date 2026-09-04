@@ -507,3 +507,11 @@ export const projetos: Projeto[] = [
 
 export const notaConformidade =
   "Todos os projetos acima representam propostas e compromissos de atuação caso eleita. Nenhum deles descreve política pública já implementada, resultado já alcançado ou dado estatístico comprovado. Pontos técnicos ainda não detalhados pela candidatura, como faixas de valor, prazos e órgãos executores, seguem marcados como a definir.";
+
+/**
+ * Lista canônica de exibição: os projetos são reordenados segundo a sequência dos eixos
+ * e renumerados de forma contínua (01, 02, 03...), evitando saltos entre eixo e numeração.
+ */
+export const projetosOrdenados: Projeto[] = eixos
+  .flatMap((eixo) => projetos.filter((projeto) => projeto.eixo === eixo.id))
+  .map((projeto, indice) => ({ ...projeto, numero: String(indice + 1).padStart(2, "0") }));
