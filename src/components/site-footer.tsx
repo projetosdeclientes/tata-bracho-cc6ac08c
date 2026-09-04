@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { candidatura, links } from "@/data/candidatura";
 import { WaveDivider } from "@/components/graphics";
+import brasaoMinas from "@/assets/brasao-minas-gerais.png.asset.json";
 
 const rotas = [
   { to: "/", label: "Início" },
