@@ -122,7 +122,7 @@ function Inicio() {
               aria-hidden="true"
               className="absolute bottom-[6%] left-1/2 h-[70%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_65%,transparent),transparent_70%)] blur-2xl"
             />
-            <div ref={fotoParallax.ref} style={fotoParallax.style} className="relative flex w-full justify-center lg:justify-end">
+            <div className="relative flex w-full justify-center lg:justify-end">
               <img
                 src={foto.url}
                 alt="Tatá Bracho, candidata a Deputada Federal por Minas Gerais, número 7720"
