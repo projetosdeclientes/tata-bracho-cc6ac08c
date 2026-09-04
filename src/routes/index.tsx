@@ -30,9 +30,17 @@ export const Route = createFileRoute("/")({
   component: Inicio,
 });
 
-const destaques = projetos.filter((p) => ["01", "07", "16"].includes(p.numero));
+const destaques = projetosOrdenados.filter((p) =>
+  ["fim-da-ilusao-do-sistema", "cnpj-para-todos", "academia-popular-e-vitalidade"].includes(p.slug),
+);
+
+const faixaCampanha = ["VOTE JÁ", "7720", "TATÁ BRACHO", "DEPUTADA FEDERAL", "MUDAR PELA RAIZ"];
 
 function Inicio() {
+  const fotoParallax = useParallax<HTMLDivElement>(42);
+  const valoresParallax = useParallax<HTMLDivElement>(-56);
+  const valoresFundo = useParallax<HTMLDivElement>(90);
+
   return (
     <>
       <section className="surface-deep relative isolate overflow-hidden pt-24 sm:pt-28">
@@ -40,17 +48,37 @@ function Inicio() {
         <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
         <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:pb-0">
-          <div className="animate-reveal order-2 lg:order-1 lg:pt-14 lg:pb-24">
-            <p className="eyebrow">
-              Candidata a {candidatura.cargo} | {candidatura.estado}
+          <div className="order-2 lg:order-1 lg:pt-14 lg:pb-24">
+            <p className="eyebrow line-mask">
+              <span className="line-rise">
+                Candidata a {candidatura.cargo} | {candidatura.estado}
+              </span>
             </p>
             <h1 className="display-xl mt-5">
-              O BRASIL PRECISA
-              <br />
-              DE <span className="text-gradient">VERDADE,</span> NÃO DE
-              <br />
-              PROMESSAS VAZIAS.
+              <span className="line-mask">
+                <span className="line-rise" style={{ animationDelay: "120ms" }}>
+                  O{" "}
+                  <span className="flag-word">
+                    BRASIL
+                    <span className="flag-word__flag" aria-hidden="true">
+                      BRASIL
+                    </span>
+                  </span>{" "}
+                  PRECISA
+                </span>
+              </span>
+              <span className="line-mask">
+                <span className="line-rise" style={{ animationDelay: "260ms" }}>
+                  DE <span className="text-gradient">VERDADE,</span> NÃO DE
+                </span>
+              </span>
+              <span className="line-mask">
+                <span className="line-rise" style={{ animationDelay: "400ms" }}>
+                  PROMESSAS VAZIAS.
+                </span>
+              </span>
             </h1>
+
             <p className="text-frost/70 mt-7 max-w-lg text-base leading-relaxed sm:text-lg">
               Eu venci a minha maior batalha pessoal com muita luta. Agora, a nossa luta é para garantir que você também
               vença a sua.
