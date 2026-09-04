@@ -11,11 +11,14 @@ export interface VelocityMarqueeProps {
 }
 
 /**
- * Faixa infinita cuja velocidade reage à rolagem da página.
- * Movimento contínuo por requestAnimationFrame, sem travar o scroll do usuário.
+ * Marquee em perspectiva 3D (adaptação do PerspectiveMarquee do 21st.dev,
+ * originalmente feito para Remotion/vídeo, portado para requestAnimationFrame).
+ * Rotação rotateY/rotateX, desfoque e opacidade por distância do centro,
+ * fades nas bordas e leve reação à rolagem, sem travar o scroll.
  */
-export function VelocityMarquee({ itens, velocidade = 70, className, itemClassName }: VelocityMarqueeProps) {
+export function VelocityMarquee({ itens, velocidade = 60, className, itemClassName }: VelocityMarqueeProps) {
   const trilhoRef = useRef<HTMLDivElement | null>(null);
+  const itensRef = useRef<HTMLSpanElement[]>([]);
 
   useEffect(() => {
     const trilho = trilhoRef.current;
@@ -30,10 +33,8 @@ export function VelocityMarquee({ itens, velocidade = 70, className, itemClassNa
 
     const aoRolar = () => {
       const atual = window.scrollY;
-      const delta = atual - ultimoScroll;
+      impulso = Math.max(-40, Math.min(40, impulso + (atual - ultimoScroll) * 0.6));
       ultimoScroll = atual;
-      // Acumula um impulso limitado para evitar saltos bruscos.
-      impulso = Math.max(-40, Math.min(40, impulso + delta * 0.6));
     };
 
     const passo = (tempo: number) => {
@@ -41,13 +42,23 @@ export function VelocityMarquee({ itens, velocidade = 70, className, itemClassNa
       ultimoTempo = tempo;
       impulso *= 0.92;
 
-      const largura = trilho.scrollWidth / 2 || 1;
+      const largura = trilho.scrollWidth / 3 || 1;
       deslocamento -= (velocidade + impulso * 8) * dt;
-      // Mantém o deslocamento dentro de um ciclo da metade duplicada.
       if (deslocamento <= -largura) deslocamento += largura;
       if (deslocamento > 0) deslocamento -= largura;
 
       trilho.style.transform = `translate3d(${deslocamento.toFixed(2)}px, 0, 0)`;
+
+      // Desfoque e opacidade conforme a distância do centro da viewport.
+      const centro = window.innerWidth / 2;
+      for (const el of itensRef.current) {
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        const distancia = Math.min(1, Math.abs(rect.left + rect.width / 2 - centro) / centro);
+        el.style.filter = `blur(${(distancia * 5).toFixed(2)}px)`;
+        el.style.opacity = String(1 - distancia * 0.45);
+      }
+
       frame = window.requestAnimationFrame(passo);
     };
 
@@ -60,18 +71,52 @@ export function VelocityMarquee({ itens, velocidade = 70, className, itemClassNa
     };
   }, [velocidade]);
 
-  const sequencia = [...itens, ...itens];
+  const sequencia = [...itens, ...itens, ...itens];
+  itensRef.current = [];
 
   return (
-    <div aria-hidden="true" className={cn("w-full overflow-hidden", className)}>
-      <div ref={trilhoRef} className="flex w-max items-center gap-10 will-change-transform">
-        {sequencia.map((item, i) => (
-          <span key={`${item}-${i}`} className={cn("flex shrink-0 items-center gap-10", itemClassName)}>
-            <span>{item}</span>
-            <span className="text-electric/50 text-2xl leading-none">◆</span>
-          </span>
-        ))}
+    <div
+      aria-hidden="true"
+      className={cn("relative w-full overflow-hidden", className)}
+      style={{ perspective: "1200px" }}
+    >
+      <div
+        className="flex w-full items-center"
+        style={{ transform: "rotateX(8deg) rotateY(-16deg)", transformStyle: "preserve-3d" }}
+      >
+        <div ref={trilhoRef} className="flex w-max items-center whitespace-nowrap will-change-transform">
+          {sequencia.map((item, i) => (
+            <span
+              key={`${item}-${i}`}
+              ref={(el) => {
+                if (el) itensRef.current.push(el);
+              }}
+              className={cn(
+                "flex shrink-0 items-center gap-10 pr-10 font-bold tracking-tight",
+                itemClassName,
+              )}
+            >
+              <span>{item}</span>
+              <span className="text-electric/50 text-[0.5em] leading-none">◆</span>
+            </span>
+          ))}
+        </div>
       </div>
+      {/* Fades nas bordas horizontais e verticais, como no componente original. */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(90deg, var(--fade-color) 0%, transparent 18%, transparent 82%, var(--fade-color) 100%)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, var(--fade-color) 0%, transparent 25%, transparent 75%, var(--fade-color) 100%)",
+        }}
+      />
     </div>
   );
 }
