@@ -156,7 +156,11 @@ function Inicio() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            ref={valoresCards.ref}
+            style={valoresCards.style}
+            className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3"
+          >
             {valores.map((valor, i) => (
               <Reveal key={valor.titulo} delay={i * 70} className="border-t border-border pt-6">
                 <p className="numeral text-electric/40 text-2xl">{String(i + 1).padStart(2, "0")}</p>
