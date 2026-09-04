@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { candidatura, valores } from "@/data/candidatura";
-import { projetosOrdenados } from "@/data/projetos";
+import { eixos, projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
 import { Reveal } from "@/components/reveal";
 import { VelocityMarquee } from "@/components/velocity-marquee";
@@ -33,9 +33,17 @@ export const Route = createFileRoute("/")({
   component: Inicio,
 });
 
-const destaques = projetosOrdenados.filter((p) =>
-  ["fim-da-ilusao-do-sistema", "cnpj-para-todos", "academia-popular-e-vitalidade"].includes(p.slug),
-);
+/**
+ * Eixos na ordem oficial, com a faixa contínua de propostas de cada um.
+ * A numeração das propostas segue a mesma ordem usada em Ideias & Projetos.
+ */
+const eixosDestacados = eixos
+  .map((eixo) => {
+    const numeros = projetosOrdenados.filter((p) => p.eixo === eixo.id).map((p) => p.numero);
+    return { ...eixo, primeira: numeros[0] ?? "", ultima: numeros[numeros.length - 1] ?? "" };
+  })
+  .filter((eixo) => eixo.primeira !== "");
+
 
 const faixaCampanha = ["VOTE JÁ", "TATÁ BRACHO 7720"];
 
