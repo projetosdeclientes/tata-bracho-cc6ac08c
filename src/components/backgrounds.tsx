@@ -188,13 +188,16 @@ export function PulseField({ className }: { className?: string }) {
             [250, 210, 150],
             [1130, 380, 190],
             [720, 120, 110],
-          ].map(([cx, cy, r], i) => (
+          ].map((coords, i) => {
+            const [cx, cy, r] = coords as [number, number, number];
+            return (
             <g key={i} className="pulse-breathe" style={{ animationDelay: `${i * 3}s`, transformOrigin: `${cx}px ${cy}px` }}>
               <circle cx={cx} cy={cy} r={r} strokeWidth="1" opacity="0.35" />
               <circle cx={cx} cy={cy} r={r * 0.62} strokeWidth="0.6" opacity="0.28" />
               <circle cx={cx} cy={cy} r={r * 1.35} strokeWidth="0.5" opacity="0.18" />
             </g>
-          ))}
+            );
+          })}
         </g>
 
         {/* Ondas auxiliares. */}
