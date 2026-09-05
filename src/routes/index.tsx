@@ -4,7 +4,8 @@ import { eixos, projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
 import { Reveal } from "@/components/reveal";
 import { VelocityMarquee } from "@/components/velocity-marquee";
-import { useParallax, useScrollProgress } from "@/hooks/use-parallax";
+import { useParallaxLayers } from "@/hooks/use-parallax-layers";
+import { TextRotate } from "@/components/ui/text-rotate";
 import foto from "@/assets/tata-bracho.png.asset.json";
 
 
@@ -48,10 +49,14 @@ const eixosDestacados = eixos
 const faixaCampanha = ["VOTE JÁ", "TATÁ BRACHO 7720"];
 
 function Inicio() {
-  // Todos no mesmo sentido para evitar que blocos se cruzem/sobreponham.
-  const valoresParallax = useParallax<HTMLDivElement>(110);
-  const valoresFundo = useScrollProgress<HTMLElement>();
-  const valoresCards = useParallax<HTMLDivElement>(190);
+  // Parallax em camadas: fundo, grade, título e cartões em velocidades diferentes.
+  const valoresLayers = useParallaxLayers<HTMLElement>([
+    { layer: "1", yPercent: 60 },
+    { layer: "2", yPercent: 34 },
+    { layer: "3", yPercent: 14 },
+    { layer: "4", yPercent: 5 },
+  ]);
+
 
   return (
     <>
@@ -115,7 +120,10 @@ function Inicio() {
             <div className="mt-12 flex items-center gap-6 border-t border-border pt-7 lg:mt-16">
               <div>
                 <p className="eyebrow">Deputada Federal</p>
-                <p className="numero-oficial mt-1 text-5xl leading-none sm:text-6xl">{candidatura.numero}</p>
+                <p className="numero-oficial numero-oficial-hero mt-1 text-5xl leading-none sm:text-6xl">
+                  {candidatura.numero}
+                </p>
+
               </div>
               <div className="bg-border h-14 w-px" />
               <p className="text-frost/60 max-w-[14rem] text-xs leading-relaxed font-medium">
@@ -149,23 +157,20 @@ function Inicio() {
 
 
       <section
-        ref={valoresFundo.ref}
+        ref={valoresLayers}
         className="bg-navy relative z-10 -mt-8 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
-        style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
       >
-        {/* Fundo fixo, mais alto que a janela, deslocado pelo progresso real da rolagem. */}
-        <div className="pointer-events-none fixed top-[-10vh] left-0 h-[120vh] w-full" aria-hidden="true">
-          <div
-            className="bg-navy relative h-full w-full will-change-transform"
-            style={{ transform: `translate3d(0, ${(valoresFundo.progress * 45).toFixed(2)}%, 0)` }}
-          >
-            <div className="absolute -top-24 right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_28%,transparent),transparent_70%)] blur-3xl" />
-            <div className="absolute bottom-[-8rem] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_26%,transparent),transparent_70%)] blur-3xl" />
-            <div className="hairline-grid absolute inset-0 opacity-30" />
+        {/* Camadas de fundo, cada uma com velocidade própria (profundidade real). */}
+        <div className="pointer-events-none absolute inset-x-0 -top-[25%] h-[150%]" aria-hidden="true">
+          <div data-parallax-layer="1" className="absolute inset-0 will-change-transform">
+            <div className="absolute top-[8%] right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_34%,transparent),transparent_70%)] blur-3xl" />
+            <div className="absolute bottom-[6%] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_32%,transparent),transparent_70%)] blur-3xl" />
           </div>
+          <div data-parallax-layer="2" className="hairline-grid absolute inset-0 opacity-30 will-change-transform" />
         </div>
+
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-          <div ref={valoresParallax.ref} style={valoresParallax.style}>
+          <div data-parallax-layer="3" className="will-change-transform">
             <Reveal>
               <p className="eyebrow">Por que eu estou aqui</p>
               <h2 className="display-lg mt-5 max-w-3xl">
@@ -175,9 +180,8 @@ function Inicio() {
           </div>
 
           <div
-            ref={valoresCards.ref}
-            style={valoresCards.style}
-            className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3"
+            data-parallax-layer="4"
+            className="mt-8 grid gap-x-12 gap-y-10 will-change-transform sm:mt-10 md:grid-cols-2 lg:grid-cols-3"
           >
             {valores.map((valor, i) => (
               <Reveal key={valor.titulo} delay={i * 70} className="border-t border-border pt-6">
@@ -189,6 +193,7 @@ function Inicio() {
           </div>
         </div>
       </section>
+
 
 
       <section className="surface-deep relative z-20 -mt-6 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
@@ -256,7 +261,18 @@ function Inicio() {
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
           <Reveal>
             <p className="eyebrow">Comunidade</p>
-            <h2 className="display-lg mt-5">Quem rala precisa ter vez e voz.</h2>
+            <h2 className="display-lg mt-5 flex flex-wrap items-baseline justify-center gap-x-[0.3em]">
+              <span>Quem rala precisa ter</span>
+              <TextRotate
+                texts={["vez.", "voz."]}
+                mainClassName="text-electric overflow-hidden justify-center"
+                splitLevelClassName="overflow-hidden pb-[0.12em]"
+                staggerFrom="last"
+                staggerDuration={0.03}
+                rotationInterval={2200}
+              />
+            </h2>
+
             <p className="text-frost/70 mx-auto mt-6 max-w-xl text-base leading-relaxed">
               A comunidade é o espaço de conversa direta com quem acredita nessa mudança. Participe e acompanhe de
               perto.

@@ -184,6 +184,16 @@
     0 0.08em 0.16em rgba(1, 21, 85, 0.55);
 }
 
+/* Mesmo número, com a sombra azul mais forte para o fundo claro do hero. */
+@utility numero-oficial-hero {
+  text-shadow:
+    0.055em 0.055em 0 var(--electric),
+    0.085em 0.085em 0 color-mix(in oklab, var(--royal) 90%, black),
+    0 0.1em 0.2em rgba(1, 21, 85, 0.7);
+}
+
+
+
 
 
 @utility hairline-grid {
