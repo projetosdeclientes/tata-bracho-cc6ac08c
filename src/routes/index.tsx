@@ -63,7 +63,6 @@ function Inicio() {
     <>
       <section className="surface-deep relative z-0 overflow-x-clip pt-24 pb-8 sm:pt-28">
         <AuroraLayer className="text-electric opacity-40" />
-        <TopographicField />
         <div className="hairline-grid absolute inset-0 opacity-20" aria-hidden="true" />
 
         <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:pb-0">
