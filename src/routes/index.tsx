@@ -62,7 +62,7 @@ function Inicio() {
   return (
     <>
       <section className="surface-deep relative z-0 overflow-x-clip pt-24 pb-8 sm:pt-28">
-        <AuroraLayer className="text-electric opacity-70" />
+        <AuroraLayer className="text-electric opacity-40" />
         <TopographicField />
         <div className="hairline-grid absolute inset-0 opacity-20" aria-hidden="true" />
 

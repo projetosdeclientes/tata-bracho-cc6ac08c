@@ -31,7 +31,8 @@ export function TopographicField({ className }: { className?: string }) {
           </linearGradient>
           <radialGradient id="topo-clear" cx="50%" cy="48%" r="52%">
             <stop offset="0%" stopColor="#000" />
-            <stop offset="45%" stopColor="#000" stopOpacity="0.45" />
+            <stop offset="28%" stopColor="#000" stopOpacity="0.4" />
+            <stop offset="62%" stopColor="#fff" stopOpacity="0.85" />
             <stop offset="100%" stopColor="#fff" />
           </radialGradient>
           <mask id="topo-mask">
@@ -61,15 +62,15 @@ export function TopographicField({ className }: { className?: string }) {
                 <path
                   key={i}
                   d={`M-80 ${y} C ${220} ${y - amp} ${420} ${y + amp} ${720} ${y - amp / 2} S ${1180} ${y + amp} ${1520} ${y - amp / 3}`}
-                  strokeWidth={i % 4 === 0 ? 1.6 : i % 3 === 0 ? 1.1 : 0.6}
-                  opacity={0.1 + ((i * 37) % 9) * 0.045}
+                  strokeWidth={i % 4 === 0 ? 2.2 : i % 3 === 0 ? 1.4 : 0.9}
+                  opacity={0.3 + ((i * 37) % 9) * 0.07}
                 />
               );
             })}
           </g>
 
           {/* Relevo denso à esquerda e à direita (alta densidade). */}
-          <g stroke="#0443CA" fill="none" opacity="0.5" className="topo-drift-slow">
+          <g stroke="#0443CA" fill="none" opacity="0.9" className="topo-drift-slow">
             {Array.from({ length: 9 }, (_, i) => (
               <ellipse
                 key={i}
@@ -77,8 +78,8 @@ export function TopographicField({ className }: { className?: string }) {
                 cy={470}
                 rx={70 + i * 34}
                 ry={40 + i * 20}
-                strokeWidth={i % 3 === 0 ? 1.2 : 0.5}
-                opacity={0.55 - i * 0.05}
+                strokeWidth={i % 3 === 0 ? 1.8 : 0.8}
+                opacity={0.7 - i * 0.05}
               />
             ))}
             {Array.from({ length: 8 }, (_, i) => (
@@ -88,22 +89,22 @@ export function TopographicField({ className }: { className?: string }) {
                 cy={300}
                 rx={60 + i * 40}
                 ry={34 + i * 24}
-                strokeWidth={i % 3 === 0 ? 1.2 : 0.5}
-                opacity={0.5 - i * 0.05}
+                strokeWidth={i % 3 === 0 ? 1.8 : 0.8}
+                opacity={0.65 - i * 0.05}
               />
             ))}
           </g>
 
           {/* Minas Gerais, integrada como mais uma camada de relevo. */}
           <g transform="translate(520 210) scale(0.86)"><g className="topo-minas">
-            <path d={MINAS_PATH} fill="#021E70" opacity="0.4" />
-            <path d={MINAS_PATH} fill="none" stroke="#1880EE" strokeWidth="1.4" opacity="0.5" />
+            <path d={MINAS_PATH} fill="#021E70" opacity="0.55" />
+            <path d={MINAS_PATH} fill="none" stroke="#1880EE" strokeWidth="2" opacity="0.75" />
             <path d={MINAS_PATH} fill="none" stroke="#0443CA" strokeWidth="0.7" opacity="0.5" transform="scale(0.92) translate(28 22)" />
             <path d={MINAS_PATH} fill="none" stroke="#012EA0" strokeWidth="0.7" opacity="0.45" transform="scale(1.08) translate(-24 -20)" />
           </g></g>
 
           {/* Nós conectando regiões. */}
-          <g stroke="#1880EE" strokeWidth="0.6" opacity="0.35">
+          <g stroke="#1880EE" strokeWidth="1" opacity="0.55">
             <path d="M210 470 L560 350 L900 430 L1250 300" fill="none" />
             <path d="M560 350 L640 620 L980 660" fill="none" />
           </g>
