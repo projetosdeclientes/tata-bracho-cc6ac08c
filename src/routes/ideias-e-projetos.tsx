@@ -91,6 +91,8 @@ function IdeiasEProjetos() {
             className={`${escuro ? "surface-deep" : "bg-navy"} relative scroll-mt-20 overflow-hidden py-16 sm:py-24`}
           >
             {escuro ? <AuroraLayer className="text-electric opacity-50" /> : null}
+            {index === 1 ? <PulseField className="opacity-90" /> : null}
+            {index === 2 ? <FlowField className="opacity-90" /> : null}
             <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
               <Reveal className="max-w-3xl">
                 <p className="eyebrow">Eixo {String(index + 1).padStart(2, "0")}</p>
