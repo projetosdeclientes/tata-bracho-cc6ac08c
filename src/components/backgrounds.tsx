@@ -154,7 +154,11 @@ export function PulseField({ className }: { className?: string }) {
 
   return (
     <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
-      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full">
+      <svg
+        viewBox="0 0 1440 600"
+        preserveAspectRatio="xMidYMid meet"
+        className="absolute inset-0 h-full w-full [mask-image:radial-gradient(120%_80%_at_50%_50%,rgba(0,0,0,0.35)_0%,#000_60%)]"
+      >
         <defs>
           <filter id="pulse-glow" x="-30%" y="-60%" width="160%" height="220%">
             <feGaussianBlur stdDeviation="5" result="b" />
@@ -203,8 +207,9 @@ export function PulseField({ className }: { className?: string }) {
           <path d={pulso} fill="none" stroke="#1880EE" strokeWidth="2" filter="url(#pulse-glow)" className="pulse-trace" />
           <path d={pulso} fill="none" stroke="#0443CA" strokeWidth="0.8" opacity="0.5" />
         </g>
-        <rect x="380" y="0" width="240" height="600" fill="#011555" opacity="0.55" />
-        <rect x="880" y="0" width="180" height="600" fill="#021E70" opacity="0.4" />
+        {/* Camadas que engolem trechos da linha, criando profundidade. */}
+        <ellipse cx="470" cy="300" rx="200" ry="260" fill="#011555" opacity="0.5" />
+        <ellipse cx="980" cy="330" rx="180" ry="240" fill="#021E70" opacity="0.4" />
       </svg>
     </div>
   );
@@ -222,7 +227,11 @@ export function FlowField({ className }: { className?: string }) {
 
   return (
     <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
-      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full">
+      <svg
+        viewBox="0 0 1440 600"
+        preserveAspectRatio="xMidYMid meet"
+        className="absolute inset-0 h-full w-full [mask-image:radial-gradient(120%_80%_at_50%_50%,rgba(0,0,0,0.4)_0%,#000_60%)]"
+      >
         <defs>
           <linearGradient id="flow-line" x1="0" x2="1">
             <stop offset="0%" stopColor="#012EA0" stopOpacity="0.15" />
@@ -255,7 +264,7 @@ export function FlowField({ className }: { className?: string }) {
         </g>
 
         {/* Baixa densidade atrás do conteúdo. */}
-        <rect x="300" y="140" width="840" height="320" fill="#011555" opacity="0.5" />
+        <ellipse cx="720" cy="300" rx="470" ry="200" fill="#011555" opacity="0.45" />
 
         <g fill="#1880EE" filter="url(#flow-glow)">
           {[
