@@ -56,7 +56,7 @@ function Inicio() {
     { layer: "2", yPercent: 46 },
   ]);
   const valoresLayers = useParallaxLayers<HTMLElement>([
-    { layer: "0", yPercent: 260 },
+    { layer: "0", yPercent: 34 },
     { layer: "1", yPercent: 220 },
     { layer: "2", yPercent: 140 },
     { layer: "3", yPercent: 56 },
@@ -182,7 +182,7 @@ function Inicio() {
             <img
               src={fundoMinas.url}
               alt=""
-              className="absolute inset-0 h-full w-full object-cover opacity-70"
+              className="absolute inset-x-0 top-[-16%] h-[132%] w-full object-cover opacity-70"
             />
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--navy)_82%,transparent),color-mix(in_oklab,var(--navy)_62%,transparent)_45%,color-mix(in_oklab,var(--navy)_85%,transparent))]" />
