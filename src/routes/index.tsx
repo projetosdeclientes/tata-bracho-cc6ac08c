@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { candidatura, valores } from "@/data/candidatura";
 import { eixos, projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
+import { TopographicField } from "@/components/backgrounds";
 import { Reveal } from "@/components/reveal";
 import { VelocityMarquee } from "@/components/velocity-marquee";
 import { useParallaxLayers } from "@/hooks/use-parallax-layers";
@@ -51,18 +52,19 @@ const faixaCampanha = ["VOTE JÁ", "TATÁ BRACHO 7720"];
 function Inicio() {
   // Parallax em camadas: fundo, grade, título e cartões em velocidades diferentes.
   const valoresLayers = useParallaxLayers<HTMLElement>([
-    { layer: "1", yPercent: 60 },
-    { layer: "2", yPercent: 34 },
-    { layer: "3", yPercent: 14 },
-    { layer: "4", yPercent: 5 },
+    { layer: "1", yPercent: 190 },
+    { layer: "2", yPercent: 110 },
+    { layer: "3", yPercent: 44 },
+    { layer: "4", yPercent: 18 },
   ]);
 
 
   return (
     <>
       <section className="surface-deep relative z-0 overflow-x-clip pt-24 pb-8 sm:pt-28">
-        <AuroraLayer className="text-electric" />
-        <div className="hairline-grid absolute inset-0 opacity-40" aria-hidden="true" />
+        <AuroraLayer className="text-electric opacity-70" />
+        <TopographicField />
+        <div className="hairline-grid absolute inset-0 opacity-20" aria-hidden="true" />
 
         <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:pb-0">
           <div className="order-2 lg:order-1 lg:min-h-[108vh] lg:pt-14 lg:pb-12">
@@ -161,7 +163,7 @@ function Inicio() {
         className="bg-navy relative z-10 -mt-8 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
       >
         {/* Camadas de fundo, cada uma com velocidade própria (profundidade real). */}
-        <div className="pointer-events-none absolute inset-x-0 -top-[25%] h-[150%]" aria-hidden="true">
+        <div className="pointer-events-none absolute inset-x-0 -top-[60%] h-[220%]" aria-hidden="true">
           <div data-parallax-layer="1" className="absolute inset-0 will-change-transform">
             <div className="absolute top-[8%] right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_34%,transparent),transparent_70%)] blur-3xl" />
             <div className="absolute bottom-[6%] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_32%,transparent),transparent_70%)] blur-3xl" />

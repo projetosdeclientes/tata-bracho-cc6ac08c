@@ -95,12 +95,12 @@ export function TopographicField({ className }: { className?: string }) {
           </g>
 
           {/* Minas Gerais, integrada como mais uma camada de relevo. */}
-          <g className="topo-minas" transform="translate(520 210) scale(0.86)">
+          <g transform="translate(520 210) scale(0.86)"><g className="topo-minas">
             <path d={MINAS_PATH} fill="#021E70" opacity="0.4" />
             <path d={MINAS_PATH} fill="none" stroke="#1880EE" strokeWidth="1.4" opacity="0.5" />
             <path d={MINAS_PATH} fill="none" stroke="#0443CA" strokeWidth="0.7" opacity="0.5" transform="scale(0.92) translate(28 22)" />
             <path d={MINAS_PATH} fill="none" stroke="#012EA0" strokeWidth="0.7" opacity="0.45" transform="scale(1.08) translate(-24 -20)" />
-          </g>
+          </g></g>
 
           {/* Nós conectando regiões. */}
           <g stroke="#1880EE" strokeWidth="0.6" opacity="0.35">
