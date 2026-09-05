@@ -7,6 +7,7 @@ import { VelocityMarquee } from "@/components/velocity-marquee";
 import { useParallaxLayers } from "@/hooks/use-parallax-layers";
 import { TextRotate } from "@/components/ui/text-rotate";
 import foto from "@/assets/tata-bracho.png.asset.json";
+import fundoMinas from "@/assets/fundo-minas-gerais.jpg.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -55,6 +56,7 @@ function Inicio() {
     { layer: "2", yPercent: 46 },
   ]);
   const valoresLayers = useParallaxLayers<HTMLElement>([
+    { layer: "0", yPercent: 260 },
     { layer: "1", yPercent: 220 },
     { layer: "2", yPercent: 140 },
     { layer: "3", yPercent: 56 },
@@ -176,6 +178,14 @@ function Inicio() {
       >
         {/* Camadas de fundo, cada uma com velocidade própria (profundidade real). */}
         <div className="pointer-events-none absolute inset-x-0 -top-[60%] h-[220%]" aria-hidden="true">
+          <div data-parallax-layer="0" className="absolute inset-0 will-change-transform">
+            <img
+              src={fundoMinas.url}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover opacity-70"
+            />
+          </div>
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--navy)_82%,transparent),color-mix(in_oklab,var(--navy)_62%,transparent)_45%,color-mix(in_oklab,var(--navy)_85%,transparent))]" />
           <div data-parallax-layer="1" className="absolute inset-0 will-change-transform">
             <div className="absolute top-[8%] right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_46%,transparent),transparent_70%)] blur-3xl" />
             <div className="absolute bottom-[6%] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_44%,transparent),transparent_70%)] blur-3xl" />
