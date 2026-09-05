@@ -239,7 +239,7 @@ export function FlowField({ className }: { className?: string }) {
       >
         <defs>
           <linearGradient id="flow-line" x1="0" x2="1">
-            <stop offset="0%" stopColor="#012EA0" stopOpacity="0.15" />
+            <stop offset="0%" stopColor="#012EA0" stopOpacity="0.25" />
             <stop offset="50%" stopColor="#0443CA" />
             <stop offset="100%" stopColor="#012EA0" stopOpacity="0.15" />
           </linearGradient>
@@ -267,8 +267,8 @@ export function FlowField({ className }: { className?: string }) {
               d={d}
               fill="none"
               stroke="url(#flow-line)"
-              strokeWidth={i % 2 === 0 ? 1.4 : 0.7}
-              opacity={0.55 - i * 0.05}
+              strokeWidth={i % 2 === 0 ? 2.4 : 1.2}
+              opacity={0.9 - i * 0.06}
             />
           ))}
         </g>
