@@ -89,7 +89,7 @@ function IdeiasEProjetos() {
           <section
             key={eixo.id}
             id={eixo.id}
-            className={`${escuro ? "surface-deep" : "bg-navy"} relative scroll-mt-20 overflow-hidden py-16 sm:py-24`}
+            className={`${escuro ? "surface-deep" : "bg-navy"} relative scroll-mt-20 overflow-x-clip py-16 sm:py-24`}
           >
             {escuro ? <AuroraLayer className="text-electric opacity-50" /> : null}
             {index === 1 ? <PulseField className="opacity-90" /> : null}
