@@ -156,8 +156,8 @@ export function PulseField({ className }: { className?: string }) {
     <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
       <svg
         viewBox="0 0 1440 600"
-        preserveAspectRatio="xMidYMid meet"
-        className="absolute inset-0 h-full w-full [mask-image:radial-gradient(120%_80%_at_50%_50%,rgba(0,0,0,0.35)_0%,#000_60%)]"
+        preserveAspectRatio="xMidYMid slice"
+        className="sticky top-0 h-screen w-full [mask-image:radial-gradient(120%_80%_at_50%_50%,rgba(0,0,0,0.35)_0%,#000_60%)]"
       >
         <defs>
           <filter id="pulse-glow" x="-30%" y="-60%" width="160%" height="220%">
@@ -229,8 +229,8 @@ export function FlowField({ className }: { className?: string }) {
     <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
       <svg
         viewBox="0 0 1440 600"
-        preserveAspectRatio="xMidYMid meet"
-        className="absolute inset-0 h-full w-full [mask-image:radial-gradient(120%_80%_at_50%_50%,rgba(0,0,0,0.4)_0%,#000_60%)]"
+        preserveAspectRatio="xMidYMid slice"
+        className="sticky top-0 h-screen w-full [mask-image:radial-gradient(120%_80%_at_50%_50%,rgba(0,0,0,0.4)_0%,#000_60%)]"
       >
         <defs>
           <linearGradient id="flow-line" x1="0" x2="1">
