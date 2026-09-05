@@ -300,3 +300,35 @@
   display: block;
   animation: line-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+/* ---- Fundos proprietários (topografia, pulso, fluxo) ---- */
+@keyframes topo-drift-x {
+  0%, 100% { transform: translate3d(-1.4%, 0, 0); }
+  50% { transform: translate3d(1.4%, -1.2%, 0); }
+}
+
+@keyframes topo-drift-slow-x {
+  0%, 100% { transform: translate3d(1.8%, 0.6%, 0); }
+  50% { transform: translate3d(-1.8%, -0.6%, 0); }
+}
+
+@keyframes topo-pulse-soft {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+@keyframes pulse-breathe-soft {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.045); opacity: 0.55; }
+}
+
+@keyframes pulse-trace-dash {
+  to { stroke-dashoffset: -1200; }
+}
+
+.topo-drift { animation: topo-drift-x 34s ease-in-out infinite; will-change: transform; }
+.topo-drift-slow { animation: topo-drift-slow-x 52s ease-in-out infinite; will-change: transform; }
+.topo-minas { animation: topo-drift-slow-x 68s ease-in-out infinite; transform-box: view-box; }
+.topo-pulse { animation: topo-pulse-soft 7s ease-in-out infinite; }
+.pulse-breathe { animation: pulse-breathe-soft 12s ease-in-out infinite; transform-box: fill-box; }
+.pulse-trace { stroke-dasharray: 240 1000; animation: pulse-trace-dash 26s linear infinite; }
