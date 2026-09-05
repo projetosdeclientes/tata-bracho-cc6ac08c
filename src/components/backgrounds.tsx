@@ -21,7 +21,7 @@ export function TopographicField({ className }: { className?: string }) {
       <svg
         viewBox="0 0 1440 900"
         preserveAspectRatio="xMidYMid slice"
-        className="topo-svg absolute inset-0 h-full w-full [mask-image:radial-gradient(circle_at_50%_46%,transparent_0%,rgba(0,0,0,0.55)_34%,#000_68%)]"
+        className="topo-svg absolute inset-0 h-full w-full [mask-image:radial-gradient(circle_at_50%_46%,transparent_0%,rgba(0,0,0,0.6)_24%,#000_54%)]"
       >
         <defs>
           <linearGradient id="topo-line" x1="0" y1="0" x2="1" y2="1">
