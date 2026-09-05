@@ -173,6 +173,11 @@ export function PulseField({ className }: { className?: string }) {
             <stop offset="88%" stopColor="#EFEFF3" />
             <stop offset="100%" stopColor="#011555" />
           </linearGradient>
+          <radialGradient id="veil-deep">
+            <stop offset="0%" stopColor="#011555" stopOpacity="0.72" />
+            <stop offset="60%" stopColor="#011555" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#011555" stopOpacity="0" />
+          </radialGradient>
           <mask id="pulse-mask">
             <rect width="1440" height="600" fill="url(#pulse-fade)" />
           </mask>
@@ -208,8 +213,8 @@ export function PulseField({ className }: { className?: string }) {
           <path d={pulso} fill="none" stroke="#0443CA" strokeWidth="0.8" opacity="0.5" />
         </g>
         {/* Camadas que engolem trechos da linha, criando profundidade. */}
-        <ellipse cx="470" cy="300" rx="200" ry="260" fill="#011555" opacity="0.5" />
-        <ellipse cx="980" cy="330" rx="180" ry="240" fill="#021E70" opacity="0.4" />
+        <ellipse cx="470" cy="300" rx="260" ry="300" fill="url(#veil-deep)" />
+        <ellipse cx="980" cy="330" rx="240" ry="280" fill="url(#veil-deep)" />
       </svg>
     </div>
   );
@@ -238,6 +243,11 @@ export function FlowField({ className }: { className?: string }) {
             <stop offset="50%" stopColor="#0443CA" />
             <stop offset="100%" stopColor="#012EA0" stopOpacity="0.15" />
           </linearGradient>
+          <radialGradient id="veil-flow">
+            <stop offset="0%" stopColor="#011555" stopOpacity="0.6" />
+            <stop offset="60%" stopColor="#011555" stopOpacity="0.32" />
+            <stop offset="100%" stopColor="#011555" stopOpacity="0" />
+          </radialGradient>
           <filter id="flow-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="4" result="b" />
             <feMerge>
@@ -264,7 +274,7 @@ export function FlowField({ className }: { className?: string }) {
         </g>
 
         {/* Baixa densidade atrás do conteúdo. */}
-        <ellipse cx="720" cy="300" rx="470" ry="200" fill="#011555" opacity="0.45" />
+        <ellipse cx="720" cy="300" rx="520" ry="240" fill="url(#veil-flow)" />
 
         <g fill="#1880EE" filter="url(#flow-glow)">
           {[
