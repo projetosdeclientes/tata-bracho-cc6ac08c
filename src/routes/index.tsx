@@ -165,10 +165,13 @@ function Inicio() {
         {/* Camadas de fundo, cada uma com velocidade própria (profundidade real). */}
         <div className="pointer-events-none absolute inset-x-0 -top-[60%] h-[220%]" aria-hidden="true">
           <div data-parallax-layer="1" className="absolute inset-0 will-change-transform">
-            <div className="absolute top-[8%] right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_34%,transparent),transparent_70%)] blur-3xl" />
-            <div className="absolute bottom-[6%] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_32%,transparent),transparent_70%)] blur-3xl" />
+            <div className="absolute top-[8%] right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_46%,transparent),transparent_70%)] blur-3xl" />
+            <div className="absolute bottom-[6%] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_44%,transparent),transparent_70%)] blur-3xl" />
           </div>
-          <div data-parallax-layer="2" className="hairline-grid absolute inset-0 opacity-30 will-change-transform" />
+          <div data-parallax-layer="2" className="absolute inset-0 will-change-transform">
+            <div className="hairline-grid absolute inset-0 opacity-40" />
+            <TopographicField className="opacity-70" />
+          </div>
         </div>
 
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
