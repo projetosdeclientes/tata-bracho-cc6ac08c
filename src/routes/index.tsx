@@ -50,19 +50,33 @@ const faixaCampanha = ["VOTE JÁ", "TATÁ BRACHO 7720"];
 
 function Inicio() {
   // Parallax em camadas: fundo, grade, título e cartões em velocidades diferentes.
+  const heroLayers = useParallaxLayers<HTMLElement>([
+    { layer: "1", yPercent: 90 },
+    { layer: "2", yPercent: 46 },
+  ]);
   const valoresLayers = useParallaxLayers<HTMLElement>([
-    { layer: "1", yPercent: 190 },
-    { layer: "2", yPercent: 110 },
-    { layer: "3", yPercent: 44 },
-    { layer: "4", yPercent: 18 },
+    { layer: "1", yPercent: 220 },
+    { layer: "2", yPercent: 140 },
+    { layer: "3", yPercent: 56 },
+    { layer: "4", yPercent: 24 },
   ]);
 
 
   return (
     <>
-      <section className="surface-deep relative z-0 overflow-x-clip pt-24 pb-8 sm:pt-28">
-        <AuroraLayer className="text-electric opacity-40" />
-        <div className="hairline-grid absolute inset-0 opacity-20" aria-hidden="true" />
+      <section
+        ref={heroLayers}
+        className="surface-deep relative z-0 overflow-x-clip pt-24 pb-8 sm:pt-28"
+      >
+        <div className="pointer-events-none absolute inset-x-0 -top-[40%] h-[180%]" aria-hidden="true">
+          <div data-parallax-layer="1" className="absolute inset-0 will-change-transform">
+            <AuroraLayer className="text-electric opacity-40" />
+          </div>
+          <div data-parallax-layer="2" className="absolute inset-0 will-change-transform">
+            <div className="hairline-grid absolute inset-0 opacity-20" />
+          </div>
+        </div>
+
 
         <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:pb-0">
           <div className="order-2 lg:order-1 lg:min-h-[108vh] lg:pt-14 lg:pb-12">
