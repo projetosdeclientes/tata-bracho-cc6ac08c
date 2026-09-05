@@ -261,7 +261,18 @@ function Inicio() {
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
           <Reveal>
             <p className="eyebrow">Comunidade</p>
-            <h2 className="display-lg mt-5">Quem rala precisa ter vez e voz.</h2>
+            <h2 className="display-lg mt-5 flex flex-wrap items-baseline justify-center gap-x-[0.3em]">
+              <span>Quem rala precisa ter</span>
+              <TextRotate
+                texts={["vez.", "voz."]}
+                mainClassName="text-electric overflow-hidden justify-center"
+                splitLevelClassName="overflow-hidden pb-[0.12em]"
+                staggerFrom="last"
+                staggerDuration={0.03}
+                rotationInterval={2200}
+              />
+            </h2>
+
             <p className="text-frost/70 mx-auto mt-6 max-w-xl text-base leading-relaxed">
               A comunidade é o espaço de conversa direta com quem acredita nessa mudança. Participe e acompanhe de
               perto.
