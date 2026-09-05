@@ -4,6 +4,7 @@ import { LampContainer } from "@/components/ui/lamp";
 import { conceitosCentrais } from "@/data/candidatura";
 import { eixos, notaConformidade, projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
+import { FlowField, PulseField } from "@/components/backgrounds";
 import { Reveal } from "@/components/reveal";
 import { ProjetoBloco } from "@/components/projeto-bloco";
 
