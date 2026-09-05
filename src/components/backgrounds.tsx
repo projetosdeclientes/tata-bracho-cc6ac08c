@@ -21,7 +21,7 @@ export function TopographicField({ className }: { className?: string }) {
       <svg
         viewBox="0 0 1440 900"
         preserveAspectRatio="xMidYMid slice"
-        className="topo-svg absolute inset-0 h-full w-full"
+        className="topo-svg absolute inset-0 h-full w-full [mask-image:radial-gradient(circle_at_50%_46%,transparent_0%,rgba(0,0,0,0.55)_34%,#000_68%)]"
       >
         <defs>
           <linearGradient id="topo-line" x1="0" y1="0" x2="1" y2="1">
@@ -29,15 +29,6 @@ export function TopographicField({ className }: { className?: string }) {
             <stop offset="55%" stopColor="#0443CA" />
             <stop offset="100%" stopColor="#1880EE" />
           </linearGradient>
-          <radialGradient id="topo-clear" cx="50%" cy="48%" r="52%">
-            <stop offset="0%" stopColor="#000" />
-            <stop offset="28%" stopColor="#000" stopOpacity="0.4" />
-            <stop offset="62%" stopColor="#fff" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="#fff" />
-          </radialGradient>
-          <mask id="topo-mask">
-            <rect width="1440" height="900" fill="url(#topo-clear)" />
-          </mask>
           <filter id="topo-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="6" result="b" />
             <feMerge>
@@ -52,7 +43,7 @@ export function TopographicField({ className }: { className?: string }) {
           />
         </defs>
 
-        <g mask="url(#topo-mask)">
+        <g>
           {/* Curvas de nível: espessuras e opacidades variadas, deriva lenta. */}
           <g className="topo-drift" stroke="url(#topo-line)" fill="none">
             {curvas.map((i) => {
