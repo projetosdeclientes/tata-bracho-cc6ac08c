@@ -153,7 +153,7 @@ export function PulseField({ className }: { className?: string }) {
     "M-40 300 H 240 l 26 -66 l 30 132 l 26 -96 l 24 30 H 640 l 30 -80 l 28 150 l 26 -70 H 1040 l 24 -54 l 28 108 l 26 -54 H 1500";
 
   return (
-    <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
+    <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0", className)}>
       <svg
         viewBox="0 0 1440 600"
         preserveAspectRatio="xMidYMid slice"
@@ -226,7 +226,7 @@ export function FlowField({ className }: { className?: string }) {
   ];
 
   return (
-    <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
+    <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0", className)}>
       <svg
         viewBox="0 0 1440 600"
         preserveAspectRatio="xMidYMid slice"
