@@ -4,7 +4,8 @@ import { eixos, projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
 import { Reveal } from "@/components/reveal";
 import { VelocityMarquee } from "@/components/velocity-marquee";
-import { useParallax, useScrollProgress } from "@/hooks/use-parallax";
+import { useParallaxLayers } from "@/hooks/use-parallax-layers";
+import { TextRotate } from "@/components/ui/text-rotate";
 import foto from "@/assets/tata-bracho.png.asset.json";
 
 
