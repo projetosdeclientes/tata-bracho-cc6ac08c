@@ -115,7 +115,10 @@ function Inicio() {
             <div className="mt-12 flex items-center gap-6 border-t border-border pt-7 lg:mt-16">
               <div>
                 <p className="eyebrow">Deputada Federal</p>
-                <p className="numero-oficial mt-1 text-5xl leading-none sm:text-6xl">{candidatura.numero}</p>
+                <p className="numero-oficial numero-oficial-hero mt-1 text-5xl leading-none sm:text-6xl">
+                  {candidatura.numero}
+                </p>
+
               </div>
               <div className="bg-border h-14 w-px" />
               <p className="text-frost/60 max-w-[14rem] text-xs leading-relaxed font-medium">
