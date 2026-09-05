@@ -48,10 +48,14 @@ const eixosDestacados = eixos
 const faixaCampanha = ["VOTE JÁ", "TATÁ BRACHO 7720"];
 
 function Inicio() {
-  // Todos no mesmo sentido para evitar que blocos se cruzem/sobreponham.
-  const valoresParallax = useParallax<HTMLDivElement>(110);
-  const valoresFundo = useScrollProgress<HTMLElement>();
-  const valoresCards = useParallax<HTMLDivElement>(190);
+  // Parallax em camadas: fundo, grade, título e cartões em velocidades diferentes.
+  const valoresLayers = useParallaxLayers<HTMLElement>([
+    { layer: "1", yPercent: 60 },
+    { layer: "2", yPercent: 34 },
+    { layer: "3", yPercent: 14 },
+    { layer: "4", yPercent: 5 },
+  ]);
+
 
   return (
     <>
