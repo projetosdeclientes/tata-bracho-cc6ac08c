@@ -152,23 +152,20 @@ function Inicio() {
 
 
       <section
-        ref={valoresFundo.ref}
+        ref={valoresLayers}
         className="bg-navy relative z-10 -mt-8 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
-        style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
       >
-        {/* Fundo fixo, mais alto que a janela, deslocado pelo progresso real da rolagem. */}
-        <div className="pointer-events-none fixed top-[-10vh] left-0 h-[120vh] w-full" aria-hidden="true">
-          <div
-            className="bg-navy relative h-full w-full will-change-transform"
-            style={{ transform: `translate3d(0, ${(valoresFundo.progress * 45).toFixed(2)}%, 0)` }}
-          >
-            <div className="absolute -top-24 right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_28%,transparent),transparent_70%)] blur-3xl" />
-            <div className="absolute bottom-[-8rem] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_26%,transparent),transparent_70%)] blur-3xl" />
-            <div className="hairline-grid absolute inset-0 opacity-30" />
+        {/* Camadas de fundo, cada uma com velocidade própria (profundidade real). */}
+        <div className="pointer-events-none absolute inset-x-0 -top-[25%] h-[150%]" aria-hidden="true">
+          <div data-parallax-layer="1" className="absolute inset-0 will-change-transform">
+            <div className="absolute top-[8%] right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_34%,transparent),transparent_70%)] blur-3xl" />
+            <div className="absolute bottom-[6%] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_32%,transparent),transparent_70%)] blur-3xl" />
           </div>
+          <div data-parallax-layer="2" className="hairline-grid absolute inset-0 opacity-30 will-change-transform" />
         </div>
+
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-          <div ref={valoresParallax.ref} style={valoresParallax.style}>
+          <div data-parallax-layer="3" className="will-change-transform">
             <Reveal>
               <p className="eyebrow">Por que eu estou aqui</p>
               <h2 className="display-lg mt-5 max-w-3xl">
@@ -178,9 +175,8 @@ function Inicio() {
           </div>
 
           <div
-            ref={valoresCards.ref}
-            style={valoresCards.style}
-            className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3"
+            data-parallax-layer="4"
+            className="mt-8 grid gap-x-12 gap-y-10 will-change-transform sm:mt-10 md:grid-cols-2 lg:grid-cols-3"
           >
             {valores.map((valor, i) => (
               <Reveal key={valor.titulo} delay={i * 70} className="border-t border-border pt-6">
@@ -192,6 +188,7 @@ function Inicio() {
           </div>
         </div>
       </section>
+
 
 
       <section className="surface-deep relative z-20 -mt-6 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
