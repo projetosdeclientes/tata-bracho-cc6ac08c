@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { candidatura, valores } from "@/data/candidatura";
 import { eixos, projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
-import { TopographicField } from "@/components/backgrounds";
 import { Reveal } from "@/components/reveal";
 import { VelocityMarquee } from "@/components/velocity-marquee";
 import { useParallaxLayers } from "@/hooks/use-parallax-layers";
@@ -169,7 +168,6 @@ function Inicio() {
           </div>
           <div data-parallax-layer="2" className="absolute inset-0 will-change-transform">
             <div className="hairline-grid absolute inset-0 opacity-40" />
-            <TopographicField className="opacity-70" />
           </div>
         </div>
 
