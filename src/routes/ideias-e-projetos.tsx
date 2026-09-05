@@ -4,6 +4,7 @@ import { LampContainer } from "@/components/ui/lamp";
 import { conceitosCentrais } from "@/data/candidatura";
 import { eixos, notaConformidade, projetosOrdenados } from "@/data/projetos";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
+import { FlowField, PulseField } from "@/components/backgrounds";
 import { Reveal } from "@/components/reveal";
 import { ProjetoBloco } from "@/components/projeto-bloco";
 
@@ -88,9 +89,11 @@ function IdeiasEProjetos() {
           <section
             key={eixo.id}
             id={eixo.id}
-            className={`${escuro ? "surface-deep" : "bg-navy"} relative scroll-mt-20 overflow-hidden py-16 sm:py-24`}
+            className={`${escuro ? "surface-deep" : "bg-navy"} relative scroll-mt-20 overflow-x-clip py-16 sm:py-24`}
           >
             {escuro ? <AuroraLayer className="text-electric opacity-50" /> : null}
+            {index === 1 ? <PulseField className="opacity-90" /> : null}
+            {index === 2 ? <FlowField className="opacity-90" /> : null}
             <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
               <Reveal className="max-w-3xl">
                 <p className="eyebrow">Eixo {String(index + 1).padStart(2, "0")}</p>
