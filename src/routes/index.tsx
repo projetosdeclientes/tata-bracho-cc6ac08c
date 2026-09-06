@@ -182,10 +182,10 @@ function Inicio() {
             <img
               src={fundoMinas.url}
               alt=""
-              className="absolute inset-x-0 top-[-16%] h-[132%] w-full object-cover opacity-95"
+              className="absolute inset-x-0 -top-[15%] w-full opacity-90 [mask-image:linear-gradient(to_bottom,black_50%,transparent_95%)]"
             />
           </div>
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--navy)_55%,transparent),color-mix(in_oklab,var(--navy)_30%,transparent)_45%,color-mix(in_oklab,var(--navy)_62%,transparent))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--navy)_30%,transparent),transparent_40%,color-mix(in_oklab,var(--navy)_45%,transparent))]" />
           <div data-parallax-layer="1" className="absolute inset-0 will-change-transform">
             <div className="absolute top-[8%] right-[-10%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_46%,transparent),transparent_70%)] blur-3xl" />
             <div className="absolute bottom-[6%] left-[-8%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_44%,transparent),transparent_70%)] blur-3xl" />
