@@ -182,7 +182,7 @@ function Inicio() {
             <img
               src={fundoMinas.url}
               alt=""
-              className="absolute inset-x-0 -top-[15%] w-full opacity-90 [mask-image:linear-gradient(to_bottom,black_50%,transparent_95%)]"
+              className="absolute inset-x-0 top-[24%] w-full opacity-90 [mask-image:linear-gradient(to_bottom,black_50%,transparent_95%)]"
             />
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--navy)_30%,transparent),transparent_40%,color-mix(in_oklab,var(--navy)_45%,transparent))]" />
