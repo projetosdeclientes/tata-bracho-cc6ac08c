@@ -12,22 +12,22 @@ const rotas = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy-deep relative">
-      <WaveDivider className="text-navy-deep -mt-px" />
-      <div className="mx-auto max-w-7xl px-5 pt-4 pb-12 sm:px-8">
-        <div className="grid gap-12 border-t border-border pt-12 md:grid-cols-[1.2fr_1fr_1fr]">
+    <footer className="surface-night relative">
+      <WaveDivider className="text-ink -mt-px" />
+      <div className="mx-auto max-w-7xl px-5 pt-2 pb-7 sm:px-8">
+        <div className="grid gap-7 border-t border-border pt-7 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <p className="text-3xl font-black tracking-tight sm:text-4xl">Tatá Bracho</p>
-            <p className="text-frost/70 mt-1 text-sm font-semibold">{candidatura.cargo}</p>
-            <p className="numero-oficial mt-4 text-6xl leading-none sm:text-7xl">{candidatura.numero}</p>
-            <p className="text-frost/55 mt-4 max-w-xs text-sm leading-relaxed">
-              {candidatura.partido} | {candidatura.federacao}
+            <p className="text-2xl font-black tracking-tight sm:text-3xl">Tatá Bracho</p>
+            <p className="text-frost/70 mt-1 text-xs font-semibold">{candidatura.cargo}</p>
+            <p className="numero-oficial mt-2 text-4xl leading-none sm:text-5xl">{candidatura.numero}</p>
+            <p className="text-frost/55 mt-3 max-w-xs text-xs leading-relaxed">
+              <span className="text-solidario font-bold">{candidatura.partido}</span> | {candidatura.federacao}
             </p>
           </div>
 
           <nav aria-label="Navegação do rodapé">
             <p className="eyebrow">Navegação</p>
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-3 space-y-1.5">
               {rotas.map((rota) => (
                 <li key={rota.to}>
                   <Link to={rota.to} className="text-frost/75 hover:text-electric text-sm font-medium transition-colors">
@@ -38,42 +38,41 @@ export function SiteFooter() {
             </ul>
           </nav>
 
-          <div>
-            <p className="eyebrow">Institucional</p>
-            <ul className="mt-5 space-y-3 text-sm">
-              <li>
-                <a
-                  href={links.solidariedade}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-frost/75 hover:text-electric font-medium transition-colors"
-                >
-                  Solidariedade
-                </a>
-              </li>
-              <li className="text-frost/55 leading-relaxed">{candidatura.nomeUrna}</li>
-              <li className="text-frost/55 leading-relaxed">Candidatura em {candidatura.estado}</li>
-            </ul>
-
-            <div className="mt-8 flex items-center gap-4 border-t border-border pt-6">
-              <img
-                src={brasaoMinas.url}
-                alt="Brasão do Estado de Minas Gerais"
-                width={112}
-                height={108}
-                loading="lazy"
-                className="h-14 w-auto opacity-90"
-              />
+          <div className="flex items-start gap-5">
+            <div className="flex-1">
+              <p className="eyebrow">Institucional</p>
+              <ul className="mt-3 space-y-1.5 text-sm">
+                <li>
+                  <a
+                    href={links.solidariedade}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-solidario font-bold transition-opacity hover:opacity-80"
+                  >
+                    Solidariedade
+                  </a>
+                </li>
+                <li className="text-frost/55 text-xs leading-relaxed">{candidatura.nomeUrna}</li>
+                <li className="text-frost/55 text-xs leading-relaxed">Candidatura em {candidatura.estado}</li>
+              </ul>
             </div>
+            <img
+              src={brasaoMinas.url}
+              alt="Brasão do Estado de Minas Gerais"
+              width={112}
+              height={108}
+              loading="lazy"
+              className="h-24 w-auto shrink-0 opacity-95 sm:h-28"
+            />
           </div>
         </div>
 
-        <div className="rule-line mt-12" />
+        <div className="rule-line mt-6" />
 
-        <p className="text-frost/50 mt-6 text-[0.72rem] leading-relaxed font-medium tracking-wide">
+        <p className="text-frost/50 mt-4 text-[0.68rem] leading-relaxed font-medium tracking-wide">
           {candidatura.identificacaoEleitoral}
         </p>
-        <p className="text-frost/35 mt-3 text-[0.7rem] leading-relaxed">
+        <p className="text-frost/35 mt-2 text-[0.66rem] leading-relaxed">
           As propostas apresentadas neste site representam compromissos de atuação parlamentar caso eleita. Nenhuma
           delas descreve política pública já implementada ou resultado alcançado.
         </p>
@@ -81,3 +80,4 @@ export function SiteFooter() {
     </footer>
   );
 }
+
