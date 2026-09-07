@@ -127,7 +127,7 @@ function SobreMim() {
                 href={links.solidariedade}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-electric hover:text-frost mt-6 inline-flex text-sm font-bold tracking-wide transition-colors"
+                className="text-solidario mt-6 inline-flex text-sm font-bold tracking-wide transition-opacity hover:opacity-80"
               >
                 Conheça o Solidariedade ↗
               </a>
@@ -136,11 +136,9 @@ function SobreMim() {
                 As propostas que eu apresento estão reunidas em Ideias & Projetos, com o problema, a proposta e quem eu
                 quero beneficiar em cada uma delas.
               </p>
-              <Link
-                to="/ideias-e-projetos"
-                className="bg-vivid text-frost hover:bg-electric mt-7 inline-flex rounded-sm px-7 py-4 text-sm font-bold tracking-wide transition-colors"
-              >
+              <Link to="/ideias-e-projetos" className="btn-cta mt-7">
                 Ver as propostas
+                <span aria-hidden="true">→</span>
               </Link>
             </Reveal>
           </div>

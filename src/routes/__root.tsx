@@ -25,7 +25,7 @@ function NotFoundComponent() {
         </p>
         <Link
           to="/"
-          className="bg-vivid text-frost hover:bg-electric mt-8 inline-flex items-center rounded-sm px-6 py-3 text-sm font-bold tracking-wide transition-colors"
+          className="btn-cta mt-8"
         >
           Voltar ao início
         </Link>
@@ -54,7 +54,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="bg-vivid text-frost hover:bg-electric rounded-sm px-6 py-3 text-sm font-bold tracking-wide transition-colors"
+            className="btn-cta"
           >
             Tentar novamente
           </button>
