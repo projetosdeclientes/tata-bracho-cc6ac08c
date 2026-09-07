@@ -27,12 +27,13 @@ export const Route = createFileRoute("/sobre-mim")({
 function SobreMim() {
   return (
     <>
-      <section className="surface-deep relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
-        <AuroraLayer className="text-electric" />
+      <section className="surface-dawn relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
+        <AuroraLayer className="text-electric opacity-60" />
+        <div className="diagonal-veil pointer-events-none absolute inset-0 opacity-50" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <p className="eyebrow animate-reveal">Sobre mim</p>
           <h1 className="display-xl animate-reveal mt-6 max-w-4xl">
-            A MINHA HISTÓRIA É A <span className="text-gradient">LUTA DO POVO.</span>
+            A MINHA HISTÓRIA É A <span className="text-gradient-anim">LUTA DO POVO.</span>
           </h1>
           <p className="text-frost/70 animate-reveal mt-8 max-w-xl text-base leading-relaxed sm:text-lg">
             Texto escrito por mim, do jeito que eu vivi. Sem intermediário, sem enfeite.
@@ -41,8 +42,9 @@ function SobreMim() {
         <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
       </section>
 
-      <section className="bg-navy relative py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <section className="surface-steel relative overflow-hidden py-16 sm:py-24">
+        <div className="noise-veil pointer-events-none absolute inset-0" aria-hidden="true" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="grid gap-8 border-b border-border pb-10 sm:grid-cols-3">
             <div>
               <p className="numeral text-gradient text-6xl leading-none">76</p>
@@ -125,7 +127,7 @@ function SobreMim() {
                 href={links.solidariedade}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-electric hover:text-frost mt-6 inline-flex text-sm font-bold tracking-wide transition-colors"
+                className="text-solidario mt-6 inline-flex text-sm font-bold tracking-wide transition-opacity hover:opacity-80"
               >
                 Conheça o Solidariedade ↗
               </a>
@@ -134,11 +136,9 @@ function SobreMim() {
                 As propostas que eu apresento estão reunidas em Ideias & Projetos, com o problema, a proposta e quem eu
                 quero beneficiar em cada uma delas.
               </p>
-              <Link
-                to="/ideias-e-projetos"
-                className="bg-vivid text-frost hover:bg-electric mt-7 inline-flex rounded-sm px-7 py-4 text-sm font-bold tracking-wide transition-colors"
-              >
+              <Link to="/ideias-e-projetos" className="btn-cta mt-7">
                 Ver as propostas
+                <span aria-hidden="true">→</span>
               </Link>
             </Reveal>
           </div>

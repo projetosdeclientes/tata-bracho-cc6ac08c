@@ -81,7 +81,7 @@ function Inicio() {
 
 
         <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:pb-0">
-          <div className="order-2 lg:order-1 lg:min-h-[108vh] lg:pt-14 lg:pb-12">
+          <div className="order-2 lg:order-1 lg:min-h-[118vh] lg:pt-14 lg:pb-12">
 
             <p className="eyebrow line-mask">
               <span className="line-rise">
@@ -103,7 +103,7 @@ function Inicio() {
               </span>
               <span className="line-mask">
                 <span className="line-rise whitespace-nowrap" style={{ animationDelay: "260ms" }}>
-                  DE <span className="text-gradient">VERDADE,</span> NÃO DE
+                  DE <span className="text-gradient-anim">VERDADE,</span> NÃO DE
                 </span>
               </span>
               <span className="line-mask">
@@ -113,25 +113,25 @@ function Inicio() {
               </span>
             </h1>
 
-            <p className="text-frost/70 mt-7 max-w-lg text-base leading-relaxed sm:text-lg">
+            <p
+              className="text-frost/70 animate-fade-up mt-7 max-w-lg text-base leading-relaxed sm:text-lg"
+              style={{ animationDelay: "540ms" }}
+            >
               Eu venci a minha maior batalha pessoal com muita luta. Agora, a nossa luta é para garantir que você também
               vença a sua.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <Link
-                to="/ideias-e-projetos"
-                className="bg-vivid text-frost hover:bg-electric rounded-sm px-7 py-4 text-sm font-bold tracking-wide transition-colors"
-              >
+
+            <div className="animate-fade-up mt-9 flex flex-wrap items-center gap-3" style={{ animationDelay: "620ms" }}>
+              <Link to="/ideias-e-projetos" className="btn-cta">
                 Conheça as propostas
+                <span aria-hidden="true">→</span>
               </Link>
-              <Link
-                to="/sobre-mim"
-                className="border-border text-frost hover:border-electric rounded-sm border px-7 py-4 text-sm font-bold tracking-wide transition-colors"
-              >
+              <Link to="/sobre-mim" className="btn-cta-solid">
                 A minha história
               </Link>
             </div>
+
 
             <div className="mt-12 flex items-center gap-6 border-t border-border pt-7 lg:mt-16">
               <div>
@@ -143,14 +143,15 @@ function Inicio() {
               </div>
               <div className="bg-border h-14 w-px" />
               <p className="text-frost/60 max-w-[14rem] text-xs leading-relaxed font-medium">
-                {candidatura.partido}
+                <span className="text-solidario font-bold">{candidatura.partido}</span>
                 <br />
                 {candidatura.federacao}
               </p>
+
             </div>
           </div>
 
-          <div className="relative order-1 flex justify-center lg:order-2 lg:sticky lg:top-28 lg:justify-end lg:self-start">
+          <div className="relative order-1 flex justify-center lg:order-2 lg:sticky lg:top-24 lg:justify-end lg:self-start">
             <div
               aria-hidden="true"
               className="absolute bottom-[6%] left-1/2 h-[70%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_65%,transparent),transparent_70%)] blur-2xl"
@@ -162,10 +163,11 @@ function Inicio() {
                 width={860}
                 height={1100}
                 fetchPriority="high"
-                className="relative w-full max-w-[19rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] sm:max-w-[24rem] lg:max-w-[27rem]"
+                className="animate-photo-paste relative w-full max-w-[19rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] sm:max-w-[24rem] lg:max-w-[27rem]"
               />
             </div>
           </div>
+
         </div>
 
         <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
@@ -174,7 +176,7 @@ function Inicio() {
 
       <section
         ref={valoresLayers}
-        className="bg-navy relative z-10 -mt-8 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
+        className="bg-navy relative z-10 -mt-[20vh] overflow-hidden rounded-t-[2rem] pt-28 pb-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:pt-36 sm:pb-28"
       >
         {/* Camadas de fundo, cada uma com velocidade própria (profundidade real). */}
         <div className="pointer-events-none absolute inset-x-0 -top-[60%] h-[220%]" aria-hidden="true">
@@ -222,8 +224,10 @@ function Inicio() {
 
 
 
-      <section className="surface-deep relative z-20 -mt-6 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
-        <AuroraLayer className="text-electric opacity-60" />
+      <section className="surface-dawn relative z-20 -mt-6 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
+        <AuroraLayer className="text-electric opacity-45" />
+        <div className="noise-veil pointer-events-none absolute inset-0" aria-hidden="true" />
+
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -265,6 +269,14 @@ function Inicio() {
           </ul>
           <div className="rule-line mt-px" />
 
+          <Reveal className="mt-12 flex justify-center">
+            <Link to="/ideias-e-projetos" className="btn-cta px-10 py-5 text-base">
+              Ver todas as propostas
+              <span aria-hidden="true">→</span>
+            </Link>
+          </Reveal>
+
+
         </div>
       </section>
 
@@ -283,7 +295,13 @@ function Inicio() {
 
 
 
-      <section className="bg-navy relative z-40 overflow-hidden py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
+      <section className="surface-steel relative z-40 overflow-hidden py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28">
+        <div className="diagonal-veil pointer-events-none absolute inset-0 opacity-70" aria-hidden="true" />
+        <div
+          className="pointer-events-none absolute -top-24 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_32%,transparent),transparent_70%)] blur-3xl"
+          aria-hidden="true"
+        />
+
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
           <Reveal>
             <p className="eyebrow">Comunidade</p>
@@ -303,12 +321,11 @@ function Inicio() {
               A comunidade é o espaço de conversa direta com quem acredita nessa mudança. Participe e acompanhe de
               perto.
             </p>
-            <Link
-              to="/comunidade"
-              className="bg-vivid text-frost hover:bg-electric mt-9 inline-flex rounded-sm px-8 py-4 text-sm font-bold tracking-wide transition-colors"
-            >
+            <Link to="/comunidade" className="btn-cta mt-9">
               Entrar na comunidade
+              <span aria-hidden="true">→</span>
             </Link>
+
           </Reveal>
         </div>
       </section>

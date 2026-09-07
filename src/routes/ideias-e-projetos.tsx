@@ -41,7 +41,7 @@ function IdeiasEProjetos() {
             transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
             className="display-lg mx-auto max-w-4xl text-center sm:text-6xl"
           >
-            DEZESSEIS PROPOSTAS PARA <span className="text-gradient">MUDAR PELA RAIZ.</span>
+            DEZESSEIS PROPOSTAS PARA <span className="text-gradient-anim">MUDAR PELA RAIZ.</span>
           </motion.h1>
         </LampContainer>
         <AuroraLayer className="text-electric" />
@@ -59,8 +59,9 @@ function IdeiasEProjetos() {
         <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
       </section>
 
-      <section className="bg-navy py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <section className="surface-steel relative overflow-hidden py-14 sm:py-20">
+        <div className="diagonal-veil pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="eyebrow">Eixos temáticos</p>
             <nav aria-label="Eixos temáticos" className="mt-6 grid gap-px sm:grid-cols-2 lg:grid-cols-5">
@@ -89,7 +90,7 @@ function IdeiasEProjetos() {
           <section
             key={eixo.id}
             id={eixo.id}
-            className={`${escuro ? "surface-deep" : "bg-navy"} relative scroll-mt-20 overflow-x-clip py-16 sm:py-24`}
+            className={`${escuro ? "surface-dawn" : "surface-night"} relative scroll-mt-20 overflow-x-clip py-16 sm:py-24`}
           >
             {escuro ? <AuroraLayer className="text-electric opacity-50" /> : null}
             {index === 1 ? <PulseField className="opacity-90" /> : null}
@@ -112,8 +113,10 @@ function IdeiasEProjetos() {
         );
       })}
 
-      <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <section className="surface-steel relative overflow-hidden py-20 sm:py-28">
+        <div className="noise-veil pointer-events-none absolute inset-0" aria-hidden="true" />
+        <div className="pointer-events-none absolute bottom-[-10%] left-[-10%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--vivid)_34%,transparent),transparent_70%)] blur-3xl" aria-hidden="true" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="eyebrow">Conceitos que atravessam as propostas</p>
             <h2 className="display-lg mt-5 max-w-2xl">Quatro ideias sustentam todo o resto.</h2>
@@ -132,11 +135,9 @@ function IdeiasEProjetos() {
           </Reveal>
 
           <Reveal className="mt-14">
-            <Link
-              to="/comunidade"
-              className="bg-vivid text-frost hover:bg-electric inline-flex rounded-sm px-8 py-4 text-sm font-bold tracking-wide transition-colors"
-            >
+            <Link to="/comunidade" className="btn-cta">
               Participe da comunidade
+              <span aria-hidden="true">→</span>
             </Link>
           </Reveal>
         </div>

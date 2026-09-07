@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { candidatura, links } from "@/data/candidatura";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
 import { Reveal } from "@/components/reveal";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 
 export const Route = createFileRoute("/comunidade")({
   head: () => ({
@@ -45,12 +46,13 @@ function Comunidade() {
 
   return (
     <>
-      <section className="surface-deep relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
-        <AuroraLayer className="text-electric" />
+      <section className="surface-night relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
+        <AuroraLayer className="text-electric opacity-70" />
+        <div className="diagonal-veil pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <p className="eyebrow animate-reveal">Comunidade</p>
           <h1 className="display-xl animate-reveal mt-6 max-w-4xl">
-            QUEM RALA PRECISA TER <span className="text-gradient">VEZ E VOZ.</span>
+            QUEM RALA PRECISA TER <span className="text-gradient-anim">VEZ E VOZ.</span>
           </h1>
           <p className="text-frost/70 animate-reveal mt-8 max-w-xl text-base leading-relaxed sm:text-lg">
             Este é o espaço de aproximação com quem acredita que dá para mudar as coisas pela raiz.
@@ -59,8 +61,10 @@ function Comunidade() {
         <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
       </section>
 
-      <section className="bg-navy py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <section className="surface-steel relative overflow-hidden py-16 sm:py-24">
+        <div className="noise-veil pointer-events-none absolute inset-0" aria-hidden="true" />
+        <div className="pointer-events-none absolute top-[10%] right-[-12%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_28%,transparent),transparent_70%)] blur-3xl" aria-hidden="true" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             <div>
               <Reveal>
@@ -73,25 +77,20 @@ function Comunidade() {
 
               <Reveal delay={100} className="mt-10">
                 {linkComunidade ? (
-                  <a
-                    href={linkComunidade}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-vivid text-frost hover:bg-electric inline-flex rounded-sm px-8 py-4 text-sm font-bold tracking-wide transition-colors"
-                  >
+                  <a href={linkComunidade} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
+                    <WhatsAppIcon className="h-6 w-6" />
                     Entrar no grupo oficial
                   </a>
                 ) : (
-                  <div className="border border-border bg-royal/20 p-6">
-                    <p className="eyebrow">Link em preparação</p>
-                    <p className="text-frost/70 mt-3 text-sm leading-relaxed">
-                      O endereço oficial do grupo ainda não foi divulgado pela campanha. Assim que for liberado, ele
-                      passa a aparecer aqui.
-                    </p>
-                    {/* PLACEHOLDER_LINK_WHATSAPP_COMUNIDADE: substituir o valor de links.comunidadeWhatsapp
-                        em src/data/candidatura.ts pelo endereço oficial fornecido pela campanha. */}
-                    <p className="text-frost/40 mt-4 font-mono text-[0.7rem] tracking-wide">
-                      PLACEHOLDER_LINK_WHATSAPP_COMUNIDADE
+                  <div className="space-y-4">
+                    <button type="button" disabled aria-disabled="true" className="btn-whatsapp cursor-not-allowed opacity-70">
+                      <WhatsAppIcon className="h-6 w-6" />
+                      Entrar no grupo oficial
+                    </button>
+                    {/* PLACEHOLDER_LINK_WHATSAPP_COMUNIDADE: preencher links.comunidadeWhatsapp
+                        em src/data/candidatura.ts com o endereço oficial do grupo. */}
+                    <p className="text-frost/55 max-w-sm text-xs leading-relaxed">
+                      O botão é ativado automaticamente assim que a campanha informar o endereço oficial do grupo.
                     </p>
                   </div>
                 )}
@@ -129,7 +128,8 @@ function Comunidade() {
                 <p className="mt-5 text-sm leading-relaxed font-bold">
                   {candidatura.nomeUrna} | {candidatura.cargo} {candidatura.numero}
                 </p>
-                <p className="text-frost/55 mt-2 text-sm leading-relaxed">{candidatura.federacao}</p>
+                <p className="text-frost/55 mt-2 text-sm leading-relaxed"><span className="text-solidario font-bold">{candidatura.partido}</span> | {candidatura.federacao}
+                </p>
                 <a
                   href={links.solidariedade}
                   target="_blank"
@@ -144,19 +144,18 @@ function Comunidade() {
         </div>
       </section>
 
-      <section className="surface-deep relative overflow-hidden py-20 sm:py-28">
-        <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
+      <section className="surface-dawn relative overflow-hidden py-20 sm:py-28">
+        <AuroraLayer className="text-electric opacity-40" />
+        <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-8">
           <Reveal>
             <h2 className="display-lg">Antes de entrar, conheça as propostas.</h2>
             <p className="text-frost/70 mx-auto mt-6 max-w-xl text-base leading-relaxed">
               São dezesseis propostas de atuação, cada uma com o problema que ela enfrenta e quem ela pretende
               beneficiar.
             </p>
-            <Link
-              to="/ideias-e-projetos"
-              className="bg-vivid text-frost hover:bg-electric mt-9 inline-flex rounded-sm px-8 py-4 text-sm font-bold tracking-wide transition-colors"
-            >
+            <Link to="/ideias-e-projetos" className="btn-cta mt-9">
               Ideias & Projetos
+              <span aria-hidden="true">→</span>
             </Link>
           </Reveal>
         </div>
