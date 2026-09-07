@@ -176,7 +176,7 @@ function Inicio() {
 
       <section
         ref={valoresLayers}
-        className="bg-navy relative z-10 -mt-[20vh] overflow-hidden rounded-t-[2rem] pt-24 pb-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
+        className="bg-navy relative z-10 -mt-[20vh] overflow-hidden rounded-t-[2rem] pt-28 pb-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:pt-36 sm:pb-28"
       >
         {/* Camadas de fundo, cada uma com velocidade própria (profundidade real). */}
         <div className="pointer-events-none absolute inset-x-0 -top-[60%] h-[220%]" aria-hidden="true">
