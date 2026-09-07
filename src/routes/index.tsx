@@ -81,7 +81,7 @@ function Inicio() {
 
 
         <div className="relative mx-auto grid max-w-7xl gap-4 px-5 pb-14 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:pb-0">
-          <div className="order-2 lg:order-1 lg:min-h-[136vh] lg:pt-14 lg:pb-12">
+          <div className="order-2 lg:order-1 lg:min-h-[118vh] lg:pt-14 lg:pb-12">
 
             <p className="eyebrow line-mask">
               <span className="line-rise">
@@ -176,7 +176,7 @@ function Inicio() {
 
       <section
         ref={valoresLayers}
-        className="bg-navy relative z-10 -mt-8 overflow-hidden rounded-t-[2rem] py-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
+        className="bg-navy relative z-10 -mt-[20vh] overflow-hidden rounded-t-[2rem] pt-24 pb-20 shadow-[0_-40px_80px_-20px_rgba(1,21,85,0.95)] sm:py-28"
       >
         {/* Camadas de fundo, cada uma com velocidade própria (profundidade real). */}
         <div className="pointer-events-none absolute inset-x-0 -top-[60%] h-[220%]" aria-hidden="true">
