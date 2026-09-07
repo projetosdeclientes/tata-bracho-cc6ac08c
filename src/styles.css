@@ -52,6 +52,7 @@
   --royal: oklch(0.3693 0.1877 263.23); /* #012EA0 */
   --vivid: oklch(0.4505 0.2157 262.79); /* #0443CA */
   --electric: oklch(0.6053 0.1876 254.87); /* #1880EE */
+  --neon: oklch(0.78 0.19 229); /* azul neon para destaques pontuais */
   --frost: oklch(0.9533 0.0053 286.3); /* #EFEFF3 */
 
   --background: var(--navy-deep);
@@ -143,6 +144,12 @@
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: color-mix(in oklab, var(--electric) 85%, var(--frost));
+}
+
+@utility neon-accent {
+  text-shadow:
+    0 0 0.45rem color-mix(in oklab, var(--neon) 85%, transparent),
+    0 0 1.4rem color-mix(in oklab, var(--neon) 48%, transparent);
 }
 
 @utility display-xl {
@@ -339,7 +346,7 @@
   --solidario: oklch(0.7226 0.1712 55.63); /* #F58220 */
   /* Verde oficial do WhatsApp. Uso exclusivo do CTA da comunidade. */
   --whatsapp: oklch(0.7574 0.1817 149.14); /* #25D366 */
-  --whatsapp-dark: oklch(0.6449 0.1673 150.6); /* #128C4A */
+  --whatsapp-ink: oklch(0.22 0.065 150);
 
   /* Azuis auxiliares para variar as superfícies sem sair da identidade. */
   --steel: oklch(0.3283 0.1071 258); /* azul acinzentado */
@@ -355,6 +362,7 @@
 @theme inline {
   --color-solidario: var(--solidario);
   --color-whatsapp: var(--whatsapp);
+  --color-neon: var(--neon);
   --color-steel: var(--steel);
   --color-ink: var(--ink);
 }
@@ -384,7 +392,8 @@
   color: var(--frost);
   background: var(--gradient-cta);
   box-shadow:
-    0 14px 34px -14px color-mix(in oklab, var(--electric) 90%, transparent),
+    0 14px 34px -12px color-mix(in oklab, var(--neon) 95%, transparent),
+    0 0 1rem -0.35rem color-mix(in oklab, var(--neon) 75%, transparent),
     inset 0 1px 0 color-mix(in oklab, var(--frost) 35%, transparent);
   transition:
     transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
@@ -443,8 +452,8 @@
   padding: 1.05rem 2.1rem;
   font-size: 0.9rem;
   font-weight: 800;
-  color: #062e18;
-  background: linear-gradient(100deg, var(--whatsapp-dark), var(--whatsapp) 60%, var(--whatsapp));
+  color: var(--whatsapp-ink);
+  background: var(--whatsapp);
   box-shadow: 0 16px 40px -16px color-mix(in oklab, var(--whatsapp) 85%, transparent);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 

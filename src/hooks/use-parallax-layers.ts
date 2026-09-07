@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
  * a animação é desligada quando o usuário pede menos movimento.
  */
 export function useParallaxLayers<T extends HTMLElement = HTMLDivElement>(
-  camadas: { layer: string; yPercent: number }[],
+  camadas: { layer: string; yPercent: number; mobileYPercent?: number }[],
 ) {
   const ref = useRef<T | null>(null);
 
@@ -43,10 +43,13 @@ export function useParallaxLayers<T extends HTMLElement = HTMLDivElement>(
         camadas.forEach((camada, idx) => {
           const alvos = node.querySelectorAll(`[data-parallax-layer="${camada.layer}"]`);
           if (!alvos.length) return;
+          const deslocamento = window.matchMedia("(max-width: 767px)").matches
+            ? (camada.mobileYPercent ?? camada.yPercent)
+            : camada.yPercent;
           tl.fromTo(
             alvos,
-            { yPercent: -camada.yPercent / 2 },
-            { yPercent: camada.yPercent / 2, ease: "none" },
+            { yPercent: -deslocamento / 2 },
+            { yPercent: deslocamento / 2, ease: "none" },
             idx === 0 ? undefined : "<",
           );
         });

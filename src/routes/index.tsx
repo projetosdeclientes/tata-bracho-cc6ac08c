@@ -56,11 +56,11 @@ function Inicio() {
     { layer: "2", yPercent: 46 },
   ]);
   const valoresLayers = useParallaxLayers<HTMLElement>([
-    { layer: "0", yPercent: 52 },
-    { layer: "1", yPercent: 220 },
-    { layer: "2", yPercent: 140 },
-    { layer: "3", yPercent: 56 },
-    { layer: "4", yPercent: 24 },
+    { layer: "0", yPercent: 52, mobileYPercent: 28 },
+    { layer: "1", yPercent: 220, mobileYPercent: 64 },
+    { layer: "2", yPercent: 140, mobileYPercent: 42 },
+    { layer: "3", yPercent: 56, mobileYPercent: 0 },
+    { layer: "4", yPercent: 24, mobileYPercent: 0 },
   ]);
 
 
@@ -202,7 +202,7 @@ function Inicio() {
             <Reveal>
               <p className="eyebrow">Por que eu estou aqui</p>
               <h2 className="display-lg mt-5 max-w-3xl">
-                Eu sei o que é carregar um peso insuportável <span className="text-electric">e não desistir.</span>
+                Eu sei o que é carregar um peso insuportável <span className="text-neon">e não desistir.</span>
               </h2>
             </Reveal>
           </div>
@@ -213,7 +213,7 @@ function Inicio() {
           >
             {valores.map((valor, i) => (
               <Reveal key={valor.titulo} delay={i * 70} className="border-t border-border pt-6">
-                <p className="numeral text-electric/40 text-2xl">{String(i + 1).padStart(2, "0")}</p>
+                <p className="numeral text-neon/60 text-2xl">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="mt-3 text-lg font-extrabold tracking-tight">{valor.titulo}</h3>
                 <p className="text-frost/65 mt-3 text-sm leading-relaxed">{valor.texto}</p>
               </Reveal>
@@ -231,7 +231,7 @@ function Inicio() {
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <p className="eyebrow">Ideias & Projetos</p>
+              <p className="eyebrow neon-accent">Ideias & Projetos</p>
               <h2 className="display-lg mt-5 max-w-2xl">Dezesseis propostas, uma mesma lógica: mudar pela raiz.</h2>
             </div>
             <Link
@@ -250,7 +250,7 @@ function Inicio() {
                   hash={eixo.id}
                   className="group hover:bg-royal/25 grid gap-4 border-t border-border py-8 transition-colors sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-8"
                 >
-                  <span className="numeral text-electric/40 group-hover:text-electric text-4xl transition-colors sm:text-5xl">
+                  <span className="numeral text-neon/55 group-hover:text-neon text-4xl transition-colors sm:text-5xl">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span>
@@ -309,7 +309,7 @@ function Inicio() {
               <span>Quem rala precisa ter</span>
               <TextRotate
                 texts={["vez.", "voz."]}
-                mainClassName="text-electric overflow-hidden justify-center"
+                mainClassName="text-neon neon-accent overflow-hidden justify-center"
                 splitLevelClassName="overflow-hidden pb-[0.12em]"
                 staggerFrom="last"
                 staggerDuration={0.03}
