@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { candidatura, links } from "@/data/candidatura";
 import { WaveDivider } from "@/components/graphics";
-import brasaoMinas from "@/assets/brasao-minas-gerais.png.asset.json";
+
+const brasaoMinasUrl =
+  "https://tata-bracho.lovable.app/__l5e/assets-v1/9977143d-f6f3-4eaa-99cc-ea1cc5366615/brasao-minas-gerais.png";
 
 const rotas = [
   { to: "/", label: "Início" },
@@ -57,7 +59,7 @@ export function SiteFooter() {
               </ul>
             </div>
             <img
-              src={brasaoMinas.url}
+              src={brasaoMinasUrl}
               alt="Brasão do Estado de Minas Gerais"
               width={112}
               height={108}
