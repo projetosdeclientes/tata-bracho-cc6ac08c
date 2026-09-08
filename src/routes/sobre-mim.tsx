@@ -89,11 +89,8 @@ function SobreMim() {
               <div className="border-t border-border/60 p-5 sm:p-6">
                 <p className="eyebrow">Antes e depois</p>
                 <p className="text-frost/70 mt-2 text-sm leading-relaxed sm:text-base">
-                  76 quilos perdidos em 4 anos, na raça, no suor e na disciplina dentro da academia — sem nenhuma
+                  76 quilos perdidos em 4 anos, na raça, no suor e na disciplina dentro da academia, sem nenhuma
                   cirurgia plástica.
-                </p>
-                <p className="text-frost/40 mt-4 text-[0.65rem] tracking-wide uppercase">
-                  Espaço reservado para a foto oficial · Foto de moldura: kaboompics.com / Pexels
                 </p>
               </div>
             </Reveal>
