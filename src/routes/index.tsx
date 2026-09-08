@@ -6,7 +6,6 @@ import { Reveal } from "@/components/reveal";
 import { VelocityMarquee } from "@/components/velocity-marquee";
 import { useParallaxLayers } from "@/hooks/use-parallax-layers";
 import { TextRotate } from "@/components/ui/text-rotate";
-import foto from "@/assets/tata-bracho.png.asset.json";
 import fundoMinas from "@/assets/fundo-minas-gerais.jpg.asset.json";
 
 
@@ -158,10 +157,10 @@ function Inicio() {
             />
             <div className="relative flex w-full justify-center lg:justify-end">
               <img
-                src={foto.url}
+                src="https://picsum.photos/seed/tata-bracho-candidata/700/900"
                 alt="Tatá Bracho, candidata a Deputada Federal por Minas Gerais, número 7720"
-                width={860}
-                height={1100}
+                width={700}
+                height={900}
                 fetchPriority="high"
                 className="animate-photo-paste relative w-full max-w-[19rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] sm:max-w-[24rem] lg:max-w-[27rem]"
               />
