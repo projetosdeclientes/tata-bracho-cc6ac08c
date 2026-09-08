@@ -49,15 +49,15 @@ function SobreMim() {
           <Reveal className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--glow-electric)]">
             <AspectRatio ratio={4 / 5} className="sm:hidden">
               <img
-                src="https://images.pexels.com/photos/7991940/pexels-photo-7991940.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt="Mulher mostrando o resultado da perda de peso ao segurar uma calça larga, revelando a barriga tonificada"
+                src="https://i.ibb.co/0jXYfHyG/image.jpg"
+                alt="Tatá Bracho em foto comparativa: acima do peso e depois, já com o peso normal, mostrando o resultado da transformação"
                 className="animate-photo-paste h-full w-full object-cover"
               />
             </AspectRatio>
             <AspectRatio ratio={16 / 9} className="hidden sm:block">
               <img
-                src="https://images.pexels.com/photos/7991940/pexels-photo-7991940.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt="Mulher mostrando o resultado da perda de peso ao segurar uma calça larga, revelando a barriga tonificada"
+                src="https://i.ibb.co/0jXYfHyG/image.jpg"
+                alt="Tatá Bracho em foto comparativa: acima do peso e depois, já com o peso normal, mostrando o resultado da transformação"
                 className="animate-photo-paste h-full w-full object-cover"
               />
             </AspectRatio>
@@ -68,7 +68,7 @@ function SobreMim() {
                 cirurgia plástica.
               </p>
               <p className="text-frost/40 mt-4 text-[0.65rem] tracking-wide uppercase">
-                Foto ilustrativa: Annushka Ahuja / Pexels
+                Foto: arquivo pessoal de Tatá Bracho
               </p>
             </div>
           </Reveal>
