@@ -61,7 +61,7 @@ function Comunidade() {
         <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
       </section>
 
-      <section className="surface-steel relative overflow-hidden py-16 sm:py-24">
+      <section className="surface-steel relative overflow-x-clip py-16 sm:py-24">
         <div className="noise-veil pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className="pointer-events-none absolute top-[10%] right-[-12%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--electric)_28%,transparent),transparent_70%)] blur-3xl" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
@@ -83,7 +83,7 @@ function Comunidade() {
                   </a>
                 ) : (
                   <div className="space-y-4">
-                    <button type="button" disabled aria-disabled="true" className="btn-whatsapp cursor-not-allowed opacity-70">
+                    <button type="button" disabled aria-disabled="true" className="btn-whatsapp cursor-not-allowed">
                       <WhatsAppIcon className="h-6 w-6" />
                       Entrar no grupo oficial
                     </button>
