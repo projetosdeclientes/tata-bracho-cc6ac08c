@@ -345,7 +345,7 @@
   /* Laranja oficial do Solidariedade. Uso exclusivo para citar o partido. */
   --solidario: oklch(0.7226 0.1712 55.63); /* #F58220 */
   /* Verde oficial do WhatsApp. Uso exclusivo do CTA da comunidade. */
-  --whatsapp: oklch(0.7574 0.1817 149.14); /* #25D366 */
+  --whatsapp: #25d366;
   --whatsapp-ink: oklch(0.22 0.065 150);
 
   /* Azuis auxiliares para variar as superfícies sem sair da identidade. */
