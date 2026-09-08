@@ -157,10 +157,10 @@ function Inicio() {
             />
             <div className="relative flex w-full justify-center lg:justify-end">
               <img
-                src="https://picsum.photos/seed/tata-bracho-candidata/700/900"
+                src="https://images.pexels.com/photos/4227101/pexels-photo-4227101.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt="Tatá Bracho, candidata a Deputada Federal por Minas Gerais, número 7720"
-                width={700}
-                height={900}
+                width={1200}
+                height={1600}
                 fetchPriority="high"
                 className="animate-photo-paste relative w-full max-w-[19rem] object-contain drop-shadow-[0_40px_60px_rgba(1,21,85,0.6)] sm:max-w-[24rem] lg:max-w-[27rem]"
               />

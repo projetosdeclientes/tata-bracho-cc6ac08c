@@ -76,6 +76,9 @@ export function SiteFooter() {
           As propostas apresentadas neste site representam compromissos de atuação parlamentar caso eleita. Nenhuma
           delas descreve política pública já implementada ou resultado alcançado.
         </p>
+        <p className="text-frost/30 mt-2 text-[0.62rem] leading-relaxed">
+          Foto ilustrativa: Mix and Match Studio, via Pexels.
+        </p>
       </div>
     </footer>
   );
