@@ -346,7 +346,7 @@
   --solidario: oklch(0.7226 0.1712 55.63); /* #F58220 */
   /* Verde oficial do WhatsApp. Uso exclusivo do CTA da comunidade. */
   --whatsapp: #25d366;
-  --whatsapp-ink: oklch(0.22 0.065 150);
+  --whatsapp-ink: #ffffff;
 
   /* Azuis auxiliares para variar as superfícies sem sair da identidade. */
   --steel: oklch(0.3283 0.1071 258); /* azul acinzentado */
@@ -453,7 +453,8 @@
   font-size: 0.9rem;
   font-weight: 800;
   color: var(--whatsapp-ink);
-  background: var(--whatsapp);
+  background-color: #25d366;
+  background-image: none;
   box-shadow: 0 16px 40px -16px color-mix(in oklab, var(--whatsapp) 85%, transparent);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
