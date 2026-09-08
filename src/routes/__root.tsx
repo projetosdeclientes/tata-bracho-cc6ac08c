@@ -89,7 +89,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "https://tata-bracho.lovable.app/__l5e/assets-v1/4cbf83f5-cb3d-4104-8e7c-c367e9f44f79/tata-bracho.png", type: "image/png" },
+=======
+
+Ops, corrigindo o bloco (duplicação acidental):
+
+FILE: src/routes/__root.tsx
+<<<<<<< SEARCH
+      { rel: "icon", href: "https://tata-bracho.lovable.app/__l5e/assets-v1/4cbf83f5-cb3d-4104-8e7c-c367e9f44f79/tata-bracho.png", type: "image/png" },
+=======
+      { rel: "icon", href: "https://tata-bracho.lovable.app/__l5e/assets-v1/4cbf83f5-cb3d-4104-8e7c-c367e9f44f79/tata-bracho.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
