@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { candidatura, historia, links } from "@/data/candidatura";
 import { AuroraLayer, WaveDivider } from "@/components/graphics";
 import { Reveal } from "@/components/reveal";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export const Route = createFileRoute("/sobre-mim")({
   head: () => ({
@@ -40,6 +41,38 @@ function SobreMim() {
           </p>
         </div>
         <WaveDivider className="text-navy absolute inset-x-0 bottom-0" />
+      </section>
+
+      <section className="surface-dusk relative overflow-hidden py-16 sm:py-24">
+        <div className="noise-veil pointer-events-none absolute inset-0" aria-hidden="true" />
+        <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
+          <Reveal className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--glow-electric)]">
+            <AspectRatio ratio={4 / 5} className="sm:hidden">
+              <img
+                src="https://images.pexels.com/photos/7991940/pexels-photo-7991940.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="Mulher mostrando o resultado da perda de peso ao segurar uma calça larga, revelando a barriga tonificada"
+                className="animate-photo-paste h-full w-full object-cover"
+              />
+            </AspectRatio>
+            <AspectRatio ratio={16 / 9} className="hidden sm:block">
+              <img
+                src="https://images.pexels.com/photos/7991940/pexels-photo-7991940.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="Mulher mostrando o resultado da perda de peso ao segurar uma calça larga, revelando a barriga tonificada"
+                className="animate-photo-paste h-full w-full object-cover"
+              />
+            </AspectRatio>
+            <div className="border-t border-border/60 p-5 sm:p-6">
+              <p className="eyebrow">Antes e depois</p>
+              <p className="text-frost/70 mt-2 text-sm leading-relaxed sm:text-base">
+                76 quilos perdidos em 4 anos, na raça, no suor e na disciplina dentro da academia — sem nenhuma
+                cirurgia plástica.
+              </p>
+              <p className="text-frost/40 mt-4 text-[0.65rem] tracking-wide uppercase">
+                Foto ilustrativa: Annushka Ahuja / Pexels
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       <section className="surface-steel relative overflow-hidden py-16 sm:py-24">
