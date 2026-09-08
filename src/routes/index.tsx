@@ -181,7 +181,7 @@ function Inicio() {
         <div className="pointer-events-none absolute inset-x-0 -top-[60%] h-[220%]" aria-hidden="true">
           <div data-parallax-layer="0" className="absolute inset-0 will-change-transform">
             <img
-              src={fundoMinas.url}
+              src={`https://tata-bracho.lovable.app${fundoMinas.url}`}
               alt=""
               className="absolute inset-x-0 top-[24%] w-full opacity-90 [mask-image:linear-gradient(to_bottom,black_50%,transparent_95%)]"
             />
