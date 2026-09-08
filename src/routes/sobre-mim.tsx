@@ -45,60 +45,65 @@ function SobreMim() {
 
       <section className="surface-dusk relative overflow-hidden py-16 sm:py-24">
         <div className="noise-veil pointer-events-none absolute inset-0" aria-hidden="true" />
-        <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
-          <Reveal className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--glow-electric)]">
-            <AspectRatio ratio={4 / 5} className="sm:hidden">
-              <img
-                src="https://images.pexels.com/photos/8947625/pexels-photo-8947625.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt="Moldura em branco, reservada para a futura foto comparativa de Tatá Bracho antes e depois"
-                className="animate-photo-paste h-full w-full object-cover"
-              />
-            </AspectRatio>
-            <AspectRatio ratio={16 / 9} className="hidden sm:block">
-              <img
-                src="https://images.pexels.com/photos/8947625/pexels-photo-8947625.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt="Moldura em branco, reservada para a futura foto comparativa de Tatá Bracho antes e depois"
-                className="animate-photo-paste h-full w-full object-cover"
-              />
-            </AspectRatio>
-            <div className="border-t border-border/60 p-5 sm:p-6">
-              <p className="eyebrow">Antes e depois</p>
-              <p className="text-frost/70 mt-2 text-sm leading-relaxed sm:text-base">
-                76 quilos perdidos em 4 anos, na raça, no suor e na disciplina dentro da academia — sem nenhuma
-                cirurgia plástica.
-              </p>
-              <p className="text-frost/40 mt-4 text-[0.65rem] tracking-wide uppercase">
-                Espaço reservado para a foto oficial · Foto de moldura: kaboompics.com / Pexels
-              </p>
-            </div>
-          </Reveal>
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="grid gap-10 sm:grid-cols-2 sm:items-stretch">
+            <Reveal className="flex flex-col justify-between gap-8 sm:h-full">
+              <div>
+                <p className="numeral text-gradient text-6xl leading-none">76</p>
+                <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
+                  quilos perdidos
+                </p>
+              </div>
+              <div>
+                <p className="numeral text-gradient text-6xl leading-none">4</p>
+                <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
+                  anos de disciplina
+                </p>
+              </div>
+              <div>
+                <p className="numeral text-gradient text-6xl leading-none">16</p>
+                <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
+                  propostas apresentadas
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal
+              delay={120}
+              className="flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--glow-electric)] sm:h-full"
+            >
+              <AspectRatio ratio={4 / 5} className="sm:hidden">
+                <img
+                  src="https://images.pexels.com/photos/8947625/pexels-photo-8947625.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  alt="Moldura em branco, reservada para a futura foto comparativa de Tatá Bracho antes e depois"
+                  className="animate-photo-paste h-full w-full object-cover"
+                />
+              </AspectRatio>
+              <div className="relative hidden flex-1 sm:block">
+                <img
+                  src="https://images.pexels.com/photos/8947625/pexels-photo-8947625.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  alt="Moldura em branco, reservada para a futura foto comparativa de Tatá Bracho antes e depois"
+                  className="animate-photo-paste absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+              <div className="border-t border-border/60 p-5 sm:p-6">
+                <p className="eyebrow">Antes e depois</p>
+                <p className="text-frost/70 mt-2 text-sm leading-relaxed sm:text-base">
+                  76 quilos perdidos em 4 anos, na raça, no suor e na disciplina dentro da academia — sem nenhuma
+                  cirurgia plástica.
+                </p>
+                <p className="text-frost/40 mt-4 text-[0.65rem] tracking-wide uppercase">
+                  Espaço reservado para a foto oficial · Foto de moldura: kaboompics.com / Pexels
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
       <section className="surface-steel relative overflow-hidden py-16 sm:py-24">
         <div className="noise-veil pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal className="grid gap-8 border-b border-border pb-10 sm:grid-cols-3">
-            <div>
-              <p className="numeral text-gradient text-6xl leading-none">76</p>
-              <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
-                quilos perdidos
-              </p>
-            </div>
-            <div>
-              <p className="numeral text-gradient text-6xl leading-none">4</p>
-              <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
-                anos de disciplina
-              </p>
-            </div>
-            <div>
-              <p className="numeral text-gradient text-6xl leading-none">16</p>
-              <p className="text-frost/60 mt-2 text-xs leading-relaxed font-semibold tracking-wide uppercase">
-                propostas apresentadas
-              </p>
-            </div>
-          </Reveal>
-
           <Reveal className="mt-14 max-w-3xl">
             <p className="eyebrow">Em primeira pessoa</p>
             <p className="text-frost/70 mt-4 text-lg leading-relaxed sm:text-xl">
