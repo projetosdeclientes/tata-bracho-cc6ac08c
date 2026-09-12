@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import tataBracho from "@/assets/tata-bracho.png.asset.json";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -91,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       {
         rel: "icon",
-        href: "https://tata-bracho.lovable.app/__l5e/assets-v1/4cbf83f5-cb3d-4104-8e7c-c367e9f44f79/tata-bracho.png",
+        href: tataBracho.url,
         type: "image/png",
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

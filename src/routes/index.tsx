@@ -7,6 +7,7 @@ import { VelocityMarquee } from "@/components/velocity-marquee";
 import { useParallaxLayers } from "@/hooks/use-parallax-layers";
 import { TextRotate } from "@/components/ui/text-rotate";
 import fundoMinas from "@/assets/fundo-minas-gerais.jpg.asset.json";
+import tataBracho from "@/assets/tata-bracho.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -157,7 +158,7 @@ function Inicio() {
             />
             <div className="relative flex w-full justify-center lg:justify-end">
               <img
-                src="https://tata-bracho.lovable.app/__l5e/assets-v1/4cbf83f5-cb3d-4104-8e7c-c367e9f44f79/tata-bracho.png"
+                src={tataBracho.url}
                 alt="Tatá Bracho, candidata a Deputada Federal por Minas Gerais, número 7720"
                 width={860}
                 height={1100}
@@ -181,7 +182,7 @@ function Inicio() {
         <div className="pointer-events-none absolute inset-x-0 -top-[60%] h-[220%]" aria-hidden="true">
           <div data-parallax-layer="0" className="absolute inset-0 will-change-transform">
             <img
-              src={`https://tata-bracho.lovable.app${fundoMinas.url}`}
+              src={fundoMinas.url}
               alt=""
               className="absolute inset-x-0 top-[24%] w-full opacity-90 [mask-image:linear-gradient(to_bottom,black_50%,transparent_95%)]"
             />

@@ -1,10 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { candidatura, links } from "@/data/candidatura";
+import brasaoMinas from "@/assets/brasao-minas-gerais.png.asset.json";
 import { WaveDivider } from "@/components/graphics";
 
-const brasaoMinasUrl =
-  "https://tata-bracho.lovable.app/__l5e/assets-v1/9977143d-f6f3-4eaa-99cc-ea1cc5366615/brasao-minas-gerais.png";
+>>>>>>> REPLACE
 
+FILE: src/components/site-footer.tsx
+<<<<<<< SEARCH
+              src={brasaoMinasUrl}
+=======
+              src={brasaoMinas.url}
 const rotas = [
   { to: "/", label: "Início" },
   { to: "/sobre-mim", label: "Sobre mim" },
