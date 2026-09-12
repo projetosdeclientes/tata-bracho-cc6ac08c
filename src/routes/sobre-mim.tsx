@@ -74,15 +74,15 @@ function SobreMim() {
             >
               <AspectRatio ratio={4 / 5} className="sm:hidden">
                 <img
-                  src="https://images.pexels.com/photos/8947625/pexels-photo-8947625.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                  alt="Moldura em branco, reservada para a futura foto comparativa de Tatá Bracho antes e depois"
+                  src="https://images.pexels.com/photos/8947560/pexels-photo-8947560.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  alt="Mulher pendurando uma moldura vazia em uma parede branca"
                   className="animate-photo-paste h-full w-full object-cover"
                 />
               </AspectRatio>
               <div className="relative hidden flex-1 sm:block">
                 <img
-                  src="https://images.pexels.com/photos/8947625/pexels-photo-8947625.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                  alt="Moldura em branco, reservada para a futura foto comparativa de Tatá Bracho antes e depois"
+                  src="https://images.pexels.com/photos/8947560/pexels-photo-8947560.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  alt="Mulher pendurando uma moldura vazia em uma parede branca"
                   className="animate-photo-paste absolute inset-0 h-full w-full object-cover"
                 />
               </div>
